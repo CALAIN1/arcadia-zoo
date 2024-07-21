@@ -1,0 +1,94 @@
+<link rel="stylesheet" href="/admin.css">
+<script src="/admin/accounts.js"></script>
+
+<div class="sidebar">
+    <h1>Administration</h1>
+    <h2 id="username"></h2>
+    <ul>
+        <li><a href="/admin/zone">Gestion des Habitats</a></li>
+        <li><a href="/admin/animal">Gestion des Animaux</a></li>
+    </ul>
+</div>
+<div class="page-content">
+    <h3>Gestion des comptes</h3>
+    <button id="btn-create-account">+ Nouveau compte</button>
+    <div id="data-list">
+
+    </div>
+</div>
+
+
+<div id="create-account-modal" class="modal">
+    <div class="modal-content">
+        <h4>Créer un compte</h4>
+        <div>
+            <label>Nom :</label>
+            <input type="text" id="new-account-firstname">
+        </div>
+        <div>
+            <label>Prénom :</label>
+            <input type="text" id="new-account-lastname">
+        </div>
+        <div>
+            <label>Email :</label>
+            <input type="email" id="new-account-email">
+        </div>
+        <div>
+            <label>Mot de passe :</label>
+            <input type="password" id="new-account-password">
+        </div>
+        <div>
+            <label>Confirmer mot de passe :</label>
+            <input type="password" id="new-account-password-confirm">
+        </div>
+        <div>
+            <label>Rôle</label>
+            <select id="new-account-role">
+                <option value="2">Employé</option>
+                <option value="3">Vétérinaire</option>
+            </select>
+        </div>
+        <button id="btn-valid-new-account">Créer</button>
+    </div>
+</div>
+
+<div id="modify-account-modal" class="modal">
+    <div class="modal-content">
+        <h4>Modifier les informations d'un compte</h4>
+        <div>
+            <label>Nom :</label>
+            <input type="text" id="update-account-firstname">
+        </div>
+        <div>
+            <label>Prénom :</label>
+            <input type="text" id="update-account-lastname">
+        </div>
+        <div>
+            <label>Email :</label>
+            <input type="email" id="update-account-email">
+        </div>
+        <div>
+            <label>Mot de passe :</label>
+            <input type="password" id="update-account-password">
+        </div>
+        <div>
+            <label>Confirmer mot de passe :</label>
+            <input type="password" id="update-account-password-confirm">
+        </div>
+        <div>
+            <label>Rôle</label>
+            <select id="update-account-role">
+                <option value="2">Employé</option>
+                <option value="3">Vétérinaire</option>
+            </select>
+        </div>
+        <button id="btn-valid-update-account">Mettre à jour</button>
+    </div>
+</div>
+
+<div id="delete-account-modal" class="modal">
+    <div class="modal-content">
+        <h4>Êtes-vous certain de vouloir supprimer ce compte ?</h4>
+        <button id="btn-valid-delete-account">Supprimer le compte</button>
+    </div>
+</div>

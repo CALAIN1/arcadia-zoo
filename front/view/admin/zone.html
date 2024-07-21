@@ -1,0 +1,56 @@
+<link rel="stylesheet" href="/admin.css">
+<script src="/admin/zone.js" defer></script>
+<div class="sidebar">
+    <h1>Administration</h1>
+    <h2 id="username"></h2>
+    <ul>
+        <li><a href="/admin/accounts">Gestion des Comptes</a></li>
+        <li><a href="/admin/habitat">Gestion des Animaux</a></li>
+    </ul>
+</div>
+<div class="page-content">
+    <h3>Gestion des Habitats</h3>
+    <button id="btn-create-habitat">+ Nouvel habitat</button>
+    <div id="data-list">
+
+    </div>
+</div>
+
+<div id="create-habitat-modal" class="modal">
+    <div class="modal-content">
+        <h4>Créer un habitat</h4>
+        <div>
+            <label>Nom :</label>
+            <input type="text" id="new-habitat-name">
+        </div>
+        <div>
+            <label>Description :</label>
+            <textarea id="new-habitat-description"></textarea>
+        </div>
+        <button id="btn-valid-new-habitat">Créer</button>
+    </div>
+</div>
+
+<div id="modify-habitat-modal" class="modal">
+    <div class="modal-content">
+        <h4>Modifier les informations d'un habitat</h4>
+        <div>
+            <label>Nom :</label>
+            <input type="text" id="update-habitat-name">
+        </div>
+        <div>
+            <label>Description :</label>
+            <textarea type="text" id="update-habitat-description"></textarea>
+        </div>
+        <button id="btn-valid-update-habitat">Mettre à jour</button>
+    </div>
+</div>
+
+<div id="delete-habitat-modal" class="modal">
+    <div class="modal-content">
+        <h4>Êtes-vous certain de vouloir supprimer cet habitat ?</h4>
+        <button id="btn-valid-delete-habitat">Supprimer</button>
+    </div>
+</div>
+
+</div>

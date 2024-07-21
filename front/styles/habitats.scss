@@ -1,0 +1,58 @@
+$primary-color: rgba(125, 151, 121, 1);
+$secondary-color: rgba(235, 219, 189, 1);
+$third-color: rgba(191, 225, 223, 1);
+$wood-color: rgba(130, 86, 35, 1);
+$border-color: rgba(250, 235, 215, 1);
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.row {
+    justify-content: center;
+    margin: 0 !important;
+    width: 100vw;
+
+    >* {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        padding: 20px;
+    }
+
+    .jungle {
+        background-color: $primary-color;
+    }
+
+    .savane {
+        background-color: $secondary-color;
+    }
+
+    .marais {
+        background-color: $third-color;
+    }
+
+    p {
+        position: absolute;
+        font-size: 32px;
+        font-weight: bold;
+        pointer-events: none;
+    }
+
+    a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 800px;
+        height: 200px;
+        overflow: hidden;
+    }
+
+    a img {
+        width: 100%;
+    }
+}

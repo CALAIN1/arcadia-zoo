@@ -1,0 +1,77 @@
+.jsm {
+    position: absolute;
+    opacity: 0.7;
+    left: calc(50% - 50vw);
+    top: -115px;
+    min-height: 100vh;
+    z-index: -1;
+}
+
+body {
+    background-image: url('imageszoo/fond.webp');
+    background-size: cover;
+    background-position: bottom center;
+    background-repeat: no-repeat;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about {
+    width: 800px;
+    margin: 0 auto;
+    max-width: 100vw;
+    color: antiquewhite;
+
+    .big-elephant {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 30vw;
+        z-index: 3;
+
+        img {
+            width: 100%;
+        }
+    }
+
+    .story {
+        display: flex;
+        flex-direction: column;
+    }
+
+    h2 {
+        font-weight: bold;
+        position: relative;
+        text-align: center;
+        color: black;
+        opacity: 0.8;
+        text-shadow: 0 1px 1px rgba(255, 255, 255, .5);
+    }
+
+    .one {
+        position: relative;
+        text-align: center;
+        text-shadow: 0 2px 3px rgba(0, 0, 0, .75);
+    }
+
+    .two {
+        position: relative;
+        text-align: center;
+        margin-top: 1em;
+        margin-bottom: 10em;
+        text-shadow: 0 2px 3px rgba(0, 0, 0, .75);
+        padding-left: 70px;
+    }
+
+    .train {
+        position: absolute;
+        bottom: 0px;
+        right: 0;
+        width: 35vw;
+
+    }
+}

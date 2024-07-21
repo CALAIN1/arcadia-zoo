@@ -1,0 +1,65 @@
+<link rel="stylesheet" href="/admin.css">
+<script src="/admin/animal.js"></script>
+
+<div class="sidebar">
+    <h1>Administration</h1>
+    <h2 id="username"></h2>
+    <ul>
+        <li><a href="/admin/accounts">Gestion des Comptes</a></li>
+        <li><a href="/admin/zone">Gestion des Habitats</a></li>
+    </ul>
+</div>
+
+<div class="page-content">
+    <h3>Gestion des Animaux</h3>
+    <button id="btn-create-animal">+ Nouvel animal</button>
+    <div id="data-list">
+
+    </div>
+</div>
+
+
+<div id="create-animal-modal" class="modal">
+    <div class="modal-content">
+        <h4>Créer un animal</h4>
+        <div>
+            <label>Name :</label>
+            <input type="text" id="new-animal-name">
+        </div>
+        <div>
+            <label>Race :</label>
+            <select id="new-animal-race"></select>
+        </div>
+        <div>
+            <label>Habitat :</label>
+            <select id="new-animal-habitat"></select>
+        </div>
+        <button id="btn-valid-new-animal">Créer</button>
+    </div>
+</div>
+
+<div id="modify-animal-modal" class="modal">
+    <div class="modal-content">
+        <h4>Modifier les informations d'un animal</h4>
+        <div>
+            <label>Name :</label>
+            <input type="text" id="update-animal-name">
+        </div>
+        <div>
+            <label>Race :</label>
+            <select id="update-animal-race"></select>
+        </div>
+        <div>
+            <label>Habitat :</label>
+            <select id="update-animal-habitat"></select>
+        </div>
+        <button id="btn-valid-update-animal">Mettre à jour</button>
+    </div>
+</div>
+
+<div id="delete-animal-modal" class="modal">
+    <div class="modal-content">
+        <h4>Êtes-vous certain de vouloir supprimer cet animal ?</h4>
+        <button id="btn-valid-delete-animal">Supprimer</button>
+    </div>
+</div>

@@ -1,0 +1,176 @@
+$primary-color: rgba(125, 151, 121, 1);
+$secondary-color: rgba(235, 219, 189, 1);
+$third-color: rgba(191, 225, 223, 1);
+$wood-color: rgba(130, 86, 35, 1);
+$border-color: rgba(250, 235, 215, 1);
+
+#pass {
+    font-weight: bolder;
+}
+
+.h2 {
+    font-weight: bold;
+    font-size: 28px;
+
+}
+
+h3 {
+    flex-direction: column;
+    text-align: center;
+    font-size: 22px;
+    opacity: 0.6;
+    padding-bottom: 20px;
+}
+
+.container_food {
+    background-color: $primary-color;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px 20px 0 20px;
+
+
+
+    .carousel slide {
+        padding-left: 50px;
+    }
+
+    .food_pictures {
+        flex: 1;
+        min-width: 65%;
+        margin: 0 auto;
+    }
+
+    .food_script {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding-right: 10px;
+    }
+
+    .carousel-indicators {
+        display: none;
+    }
+
+    .card_restaurant {
+        width: 210px;
+        background-color: whitesmoke;
+        border: 5px solid $border-color;
+        border-radius: 3%;
+    }
+
+    .img-block {
+        width: calc(100% - 10px);
+        height: 250px;
+        margin: 0 auto;
+        border-radius: 3%;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        img {
+            height: 90%;
+        }
+    }
+
+    .col p {
+        margin-left: 10px;
+        text-align: start;
+        border-radius: 95px;
+        height: 30px;
+        width: 75%;
+        padding-inline-start: 10px;
+        background: $secondary-color;
+        color: black;
+        font-size: 14px;
+        border: 0;
+        display: flex;
+        align-items: center;
+        margin-bottom: 0;
+    }
+
+    figcaption {
+        margin-left: 13px;
+        font-weight: bold;
+        font-size: 15px;
+    }
+
+    .carousel-controls {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+    }
+
+    .carousel-control-next,
+    .carousel-control-prev {
+        position: relative;
+        border: 3px solid $border-color;
+        justify-content: center;
+        align-items: center;
+        background-color: $secondary-color;
+        width: 25px;
+        height: 25px;
+        border-radius: 15px;
+        color: white;
+        left: 10px;
+        top: 25%;
+    }
+}
+
+.container_park {
+    background-color: $primary-color;
+    padding-top: 30px;
+    padding-left: 0;
+
+    .safari-train {
+        display: flex;
+        padding: 0 20px 20px 0px;
+
+    }
+
+    .train_picture {
+        width: 55%;
+        height: 250px;
+        border-radius: 2%;
+    }
+
+    .train_script {
+        padding-left: 10px;
+    }
+
+    .info,
+    .rules {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+
+        font-size: 15px;
+    }
+
+    .park-map {
+        display: flex;
+        padding-left: 15px;
+        padding-right: 15px;
+        padding-bottom: 15px;
+    }
+
+    .map_script {
+        width: 55%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .map_picture {
+        width: 50%;
+        height: 230px;
+        border-radius: 2%;
+        padding-right: 5px;
+    }
+}

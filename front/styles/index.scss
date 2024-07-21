@@ -1,0 +1,152 @@
+/**header**/
+$primary-color: rgba(125, 151, 121, 1);
+$secondary-color: rgba(235, 219, 189, 1);
+$third-color: rgba(191, 225, 223, 1);
+$wood-color: rgba(130, 86, 35, 1);
+$border-color: rgba(250, 235, 215, 1);
+
+body {
+    background-color: $primary-color;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    width: 100vw;
+    overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Montserrat';
+}
+
+* {
+    font-family: 'Dosis';
+    font-size: 17px;
+}
+
+.headband {
+    background-color: grey;
+}
+
+.headband_black {
+    height: 50px;
+    background-color: black;
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+}
+
+.headband_grey {
+    height: 27px;
+    background-color: rgb(75, 72, 72);
+    border-bottom: 4px solid $third-color;
+}
+
+.logo {
+    width: 65px;
+    height: 60px;
+    margin-left: 15px;
+}
+
+main {
+    width: 1400px;
+    max-width: 100vw;
+    margin: 0 auto;
+    flex: 1;
+}
+
+nav {
+    display: flex;
+    align-items: flex-end;
+}
+
+nav ul {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 0;
+    list-style: none;
+    padding-right: 30px;
+}
+
+a {
+    color: rgba(235, 219, 189, 1);
+    text-decoration: none;
+    list-style-type: none;
+}
+
+a:hover {
+    color: rgba(191, 225, 223, 1);
+    text-decoration: none;
+    list-style-type: none;
+}
+
+/* Masquer la navigation et afficher l'icône hamburger pour les écrans plus petits */
+@media (max-width: 768px) {
+
+    /* Masquer la navigation par défaut */
+    nav ul {
+        display: none;
+    }
+
+    /* Afficher l'icône hamburger */
+    .navbar-toggler {
+        display: block;
+        /* Afficher l'icône */
+        background: none;
+        /* Retirer le fond par défaut */
+        border: none;
+        /* Retirer la bordure */
+        color: white;
+    }
+
+    .navbar-toggler-icon {
+        content: "\2630";
+        /* Icône hamburger */
+        font-size: 24px;
+        /* Taille de l'icône */
+    }
+
+    /* Aligner l'icône hamburger à droite */
+    .headband_black {
+        justify-content: flex-end;
+    }
+}
+
+/**footer**/
+
+.content {
+    flex: 1;
+    /* Prendre tout l'espace disponible, poussant le footer en bas */
+}
+
+.footer_site {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+    padding: 10px;
+    color: rgba(235, 219, 189, 1);
+    border-top: 4px solid $secondary-color;
+    backdrop-filter: brightness(0.4) blur(10px);
+}
+
+.mentions {
+    grid-column: 2;
+    text-align: center;
+}
+
+.social {
+    grid-column: 3;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    padding-right: 30px;
+}
+
+.fa-brands,
+.fa-solid {
+    font-size: 25px;
+}

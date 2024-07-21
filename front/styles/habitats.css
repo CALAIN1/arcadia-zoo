@@ -1,0 +1,45 @@
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.row {
+  justify-content: center;
+  margin: 0 !important;
+  width: 100vw;
+}
+.row > * {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 20px;
+}
+.row .jungle {
+  background-color: rgb(125, 151, 121);
+}
+.row .savane {
+  background-color: rgb(235, 219, 189);
+}
+.row .marais {
+  background-color: rgb(191, 225, 223);
+}
+.row p {
+  position: absolute;
+  font-size: 32px;
+  font-weight: bold;
+  pointer-events: none;
+}
+.row a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 800px;
+  height: 200px;
+  overflow: hidden;
+}
+.row a img {
+  width: 100%;
+}/*# sourceMappingURL=habitats.css.map */

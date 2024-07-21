@@ -1,0 +1,26 @@
+RewriteEngine on
+
+# Redirection des fichiers CSS vers le dossier front/styles/
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_URI} \.css$
+RewriteRule ^(.*)$ front/styles/$1 [L]
+
+# Redirection des fichiers JS vers le dossier front/js/
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_URI} \.js$
+RewriteRule ^(.*)$ front/js/$1 [L]
+
+# Redirection des fichiers d'images et autres vers le dossier front/files/
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_URI} \.(jpeg|jpg|png|ttf|otf|pdf|webp|mp3)$
+RewriteRule ^(.*)$ front/files/$1 [L]
+
+# Redirection des requêtes php
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_URI} \.(php)$
+RewriteRule ^(.*)$ back/$1 [L]
+
+# Si le fichier demandé n'existe pas, rediriger vers index.php
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php?page=$1 [L,QSA]
