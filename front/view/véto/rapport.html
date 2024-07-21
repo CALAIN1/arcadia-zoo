@@ -1,0 +1,41 @@
+<link rel="stylesheet" href="/admin.css">
+<script src="/véto/rapport.js"></script>
+<div class="sidebar">
+    <h1>Vétérinaire</h1>
+    <h2 id="username"></h2>
+    <ul>
+        <li><a href="/véto/etat">Etat des Habitats</a> </li>
+    </ul>
+</div>
+<div class="page-content">
+    <h3>Comptes rendus Animaux</h3>
+    <button id="btn-create-report">+ Nouveau rapport</button>
+    <div id="data-list"></div>
+</div>
+
+<div id="create-report-modal" class="modal">
+    <div class="modal-content">
+        <h4>Créer un rapport</h4>
+        <div>
+            <label>Animal :</label>
+            <select id="new-report-animal"></select>
+        </div>
+        <div>
+            <label>Etat de l'animal :</label>
+            <input id="new-report-etat" type="text">
+        </div>
+        <div>
+            <label>Nourriture :</label>
+            <input id="new-report-food" type="text">
+        </div>
+        <div>
+            <label>Qte. nourriture (gr.) :</label>
+            <input id="new-report-qte" type="number">
+        </div>
+        <div>
+            <label>Détails (facultatif) :</label>
+            <textarea id="new-report-detail"></textarea>
+        </div>
+        <button id="btn-valid-new-report">Créer</button>
+    </div>
+</div>

@@ -1,0 +1,194 @@
+.sidebar {
+    background-color: rgb(0, 0, 0, .5);
+    padding: 7px;
+
+    h1 {
+        color: white;
+        padding: 5px 12px;
+        font-size: 1.4em;
+        margin: 0;
+    }
+
+    ul {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        margin: 0;
+        padding: 0;
+
+        li {
+            padding: 5px 12px;
+            list-style: none;
+            margin: 0;
+
+            a {
+                color: rgba(255, 255, 255, .75);
+                transition: color .25s ease-out;
+
+                &:hover {
+                    color: rgb(125, 151, 121);
+                }
+            }
+        }
+    }
+}
+
+.data-infos {
+    display: flex;
+    align-content: space-between;
+
+    &>* {
+        flex: 1;
+        border-right: 1px solid black;
+        border-bottom: 1px solid black;
+        padding: 5px;
+
+        &:first-of-type {
+            flex: 0.5;
+            border-left: 1px solid black;
+        }
+
+        input[type="file"] {
+            position: absolute;
+            opacity: 0.001;
+            width: 0;
+            height: 0;
+        }
+
+        label {
+            width: 1.5em;
+            height: 1.5em;
+            margin: 5px;
+            font-size: 2em;
+            font-weight: bold;
+            color: rgb(200, 200, 200);
+            cursor: pointer;
+            border: 4px dashed rgb(200, 200, 200);
+            font-family: sans-serif;
+            border-radius: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .img-container {
+            width: 3em;
+            height: 3em;
+            margin: 5px;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 15px;
+
+            &>img {
+                min-width: 100%;
+                min-height: 100%;
+            }
+        }
+    }
+
+    .photos {
+        display: flex;
+        flex: 2;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+}
+
+.header {
+    &>* {
+        font-weight: bold;
+        border-right: 1px solid black;
+        border-bottom: 1px solid black;
+        border-top: 1px solid black;
+        padding: 5px;
+
+        &:first-of-type {
+            border-left: 1px solid black;
+        }
+
+    }
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .35s ease-out;
+
+    & * {
+        pointer-events: none;
+    }
+
+    .modal-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-end;
+        width: 500px;
+        max-width: 95vw;
+        background-color: white;
+        border-radius: 10px;
+        padding: 10px;
+        overflow: hidden;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, .35);
+
+        div {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+
+            input,
+            select,
+            textarea {
+                flex: 1;
+                margin-left: 7px;
+                resize: vertical;
+            }
+
+            input[type="checkbox"] {
+                flex: inherit;
+                margin-right: 7px;
+                margin-bottom: 6px;
+            }
+
+            label {
+                min-width: 50%;
+            }
+        }
+
+        h4 {
+            width: 100%;
+        }
+
+        button {
+            background-color: yellowgreen;
+            border-radius: 7px;
+            border: none;
+            margin: .25em 0;
+            color: white;
+            font-size: 1.1em;
+            padding: .25em 1.5em;
+            font-weight: bold;
+        }
+    }
+
+    &[show] {
+        opacity: 1;
+        pointer-events: all;
+
+        & * {
+            pointer-events: all;
+        }
+    }
+}

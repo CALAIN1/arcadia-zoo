@@ -1,0 +1,151 @@
+/** desk**/
+@media screen and (max-width:2000px) {
+    .container_banner {
+        display: flex;
+        background-color: black;
+        padding-top: 20px;
+    }
+
+    .banner_headings {
+        width: 50%;
+        margin-left: auto;
+    }
+
+    .banner_figure {
+        display: block;
+        margin: auto;
+    }
+
+    .banner_title {
+        color: bisque;
+    }
+
+
+    .banner_richtext {
+        color: rgba(235, 219, 189, 1);
+    }
+
+    .container_home_services {
+        display: flex;
+        background-color: rgba(125, 151, 121, 1);
+        padding-bottom: 30px;
+        padding-top: 15px;
+    }
+
+    .home_services_quote {
+        display: block;
+        padding-left: 5%;
+    }
+
+    .list {
+        display: flex;
+    }
+
+    .list p {
+        padding-left: 20%;
+    }
+
+    .home_services_img {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        margin-left: auto
+    }
+
+    .train {
+        margin-right: 13%;
+        margin-bottom: 0.5%;
+    }
+
+    .container_home_info {
+        display: flex;
+        background-color: rgba(125, 151, 121, 1);
+        padding-bottom: 50px;
+    }
+
+    .all_time {
+        display: flex;
+
+    }
+
+    .title_btn {
+        display: flex;
+        align-items: center;
+    }
+
+    .title_btn h2 {
+        padding-right: 70px;
+    }
+
+    .home_info_time {
+        display: block;
+        padding-left: 5%;
+    }
+
+    .week {
+        padding-right: 70px;
+    }
+
+    .title_btn button {
+        color: white;
+        background-color: bisque;
+        border-radius: 5%;
+        border: white;
+        width: 48px;
+        height: 20px;
+    }
+
+    .home_info_reviews {
+        width: 50%;
+        margin-left: auto;
+    }
+
+    .allreviews {
+        display: flex;
+        font-size: 16px;
+    }
+
+    .review1,
+    .review2 {
+        padding-right: 20px;
+    }
+
+    .fa-solid {
+        padding-top: 8px;
+        color: yellow;
+    }
+
+    .fa-solid fs {
+        color: grey;
+    }
+
+    .review-form {
+        padding: 10px;
+        background-color: rgba(125, 151, 121, 1);
+        border: 1px solid #ccc;
+    }
+
+    input,
+    textarea {
+        padding: 5px;
+        border: 1px solid #ccc;
+        background-color: rgba(235, 219, 189, 1);
+    }
+
+    button {
+        background-color: rgba(235, 219, 189, 1);
+        color: white;
+        border: none;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background-color: rgba(191, 225, 223, 1);
+    }
+}
+
+/** tablette**/
+@media screen and (min-width:768px) and (max-width:999px) {}
+
+/**mobile**/
+@media screen and (max-width:767) {}

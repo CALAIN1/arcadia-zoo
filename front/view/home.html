@@ -1,0 +1,183 @@
+<link rel="stylesheet" href="/home.css">
+<title>Zoo Arcadia</title>
+<div class="container_banner">
+    <div class="banner_figure">
+        <img src="imageszoo/headking.jpg" alt="head king">
+    </div>
+    <div class="banner_headings">
+        <h1 class="banner_title" data-title="ARCADIA ZOO">ARCADIA ZOO</h1>
+        <p class="banner_richtext">
+            Nous vous invitons à explorer la magie
+            d'ARCADIA Zoo et à découvrir la beauté
+            de la nature aux côtés de nos résidents extraordinaires.
+            Rejoignez-nous dans notre mission de préservation de la faune et de sensibilisation à la
+            conservation.
+            Bienvenue à ARCADIA Zoo, où chaque pas est un voyage vers la découverte et la préservation de notre
+            précieuse biodiversité.
+        </p>
+    </div>
+</div>
+<div class="container_home_services">
+    <div class="home_services_quote">
+        <h2 class="services_quote_title" data-title="DECOUVREZ TOUTES NOS RICHESSES">DECOUVREZ TOUTES NOS RICHESSES
+        </h2>
+        <div class="list">
+            <div class="box">
+                <i class="fa-solid fa-train"></i>
+                <p>Le petit train</p>
+            </div>
+            <div class="hidden-text">
+                <p>
+                    Venez profiter du petit train qui vous fera traverser le parc avec ses différents habitats!
+                    <br>
+                    Une visite inoubliable au plus près de nos animaux dans leurs milieux natifs.
+                </p>
+            </div>
+
+            <div class="box">
+                <i class="fa-solid fa-podcast"></i>
+                <p>La visite guidée</p>
+            </div>
+            <div class="hidden-text">
+                <p>
+                    Découvrir les habitudes de nos résidents, leurs cachettes préférées,
+                    <br>
+                    et bien c'est possible grâce à la visite guidée!
+                    <br>
+                    Sarah et Louis, nos guides depuis plus de 10 ans,
+                    <br>
+                    vous partageront pendant plus d'une heure trente
+                    <br>
+                    toutes les anecdotes du parc! Émotions garanties!
+                </p>
+            </div>
+
+            <div class="box">
+                <i class="fa-solid fa-utensils"></i>
+                <p>Les restaurants</p>
+            </div>
+            <div class="hidden-text">
+                <p>
+                    Au parc, les émotions de la journée creusent l'appétit...
+                    <br>
+                    Que ce soit pour un en-cas sucré ou un déjeuner en famille, vous pourrez facilement
+                    <br>
+                    vous restaurer dans l'un de nos 6 restaurants ou kiosques gourmands installés dans les
+                    différentes allées du parc.
+                </p>
+            </div>
+
+            <div class="box">
+                <i class="fa-solid fa-map-location"></i>
+                <p>Les habitats</p>
+            </div>
+            <div class="hidden-text">
+                <p>
+                    Le zoo abrite une variété d'écosystèmes, dont la jungle luxuriante, la savane vaste,
+                    <br>
+                    et les marais mystérieux.
+                    Chaque habitat est soigneusement aménagé
+                    <br>
+                    pour reproduire les conditions naturelles, permettant ainsi aux animaux de vivre
+                    <br>
+                    et de se comporter comme ils le feraient dans la nature.
+                </p>
+            </div>
+
+            <div class="box">
+                <i class="fa-solid fa-paw"></i>
+                <p>Les animaux</p>
+            </div>
+            <div class="hidden-text">
+                <p>
+                    Le Zoo Arcadia abrite plus de 600 espèces animales, offrant une diversité impressionnante allant
+                    des
+                    majestueux mammifères aux oiseaux exotiques et reptiles fascinants.
+                    <br>
+                    Chaque espèce bénéficie d'un habitat soigneusement recréé pour assurer son bien-être
+                    <br>
+                    et favoriser la conservation.
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="home_services_img">
+        <img class="train" src="imageszoo/petittest.webp" alt="Le petit train">
+        <div class="d-flex">
+            <img class="align-self-start" src="imageszoo/téléchargement (1).jpg" alt="animal1" width="190" height="100">
+            <img class="align-self-center" src="imageszoo/singe.jpg" alt="animal2" width="190" height="100">
+            <img class="align-self-end" src="imageszoo/flamand.jpg" alt="animal3" width="190" height="100">
+        </div>
+    </div>
+</div>
+<div class="container_home_info">
+    <div class="home_info_time">
+        <h2>NOS HORAIRES D'OUVERTURE</h2>
+        <div class="all_time">
+            <div class="week">
+                Du lundi au vendredi<br>
+                de 10H00 à 18H00.
+            </div>
+            <div class="week-end">
+                Week-end, jours fériés<br>
+                et vacances scolaires
+                de 10H00 à 19H30.
+            </div>
+        </div>
+    </div>
+    <div class="home_info_reviews">
+        <div class="title_btn">
+            <h2>LAISSEZ NOUS UN AVIS!</h2>
+            <button id="open-form">ici</button> <!-- Bouton déclencheur -->
+        </div>
+        <!-- Formulaire d'avis caché par défaut -->
+        <div class="review-form" id="review-form" style="display: none;">
+            <form action="/submit" method="post">
+                <label for="name">Nom:</label>
+                <input type="text" id="name" name="name" required><br>
+                <label for="comment">Commentaire:</label>
+                <textarea id="comment" name="comment" rows="4" required></textarea><br>
+                <button type="submit">Soumettre</button>
+            </form>
+        </div>
+
+        <div class="allreviews">
+            <div class="review1">
+                <span>Isabelle de Caen</span><br>
+                Super visite en famille<br>
+                petits et grands sont ravis!<br>
+                <div class="stars">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+            </div>
+            <div class="review2">
+                <span>Roger de Paris</span><br>
+                Un parc animalier au Top!<br>
+                Nous reviendrons!<br>
+                <div class="stars">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+            </div>
+            <div class="review3">
+                <span>Stéphane de Rouen</span><br>
+                Superbe journée, beaux animaux,<br>
+                services sympas.<br>
+                <div class="stars">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star" style="color: gray;"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,229 @@
+@charset "UTF-8";
+.habitats {
+  min-width: 100vw;
+  min-height: 100vh;
+  opacity: 0.5;
+  position: fixed;
+  z-index: -1;
+  left: 0;
+  top: 0;
+  pointer-events: none;
+}
+
+.title {
+  margin-bottom: 30px;
+}
+.title h2 {
+  font-weight: bold;
+  font-size: 56px;
+  text-align: center;
+  opacity: 0.6;
+}
+
+#container_card {
+  display: flex;
+  position: relative;
+}
+
+.animals_zoo {
+  width: 50%;
+  display: flex;
+  justify-content: space-around;
+  padding-left: 100px;
+  padding-bottom: 30px;
+  gap: 20px;
+}
+
+.box-card {
+  width: 50%;
+  padding-left: 15%;
+}
+
+.card-animal-jungle {
+  width: 155px;
+  border-radius: 4%;
+  background-color: rgb(125, 151, 121);
+  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(0, 0, 0, 0.35);
+}
+.card-animal-jungle .pictures {
+  height: 110px;
+  width: 155px;
+  border-radius: 4% 4% 0 0;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.card-animal-jungle p {
+  margin: 0;
+  text-align: center;
+  color: whitesmoke;
+}
+.card-animal-jungle .name {
+  font-size: 12px;
+  font-weight: bolder;
+}
+.card-animal-jungle .espèce,
+.card-animal-jungle .race {
+  font-size: 10px;
+}
+
+.card-animal-savane {
+  width: 155px;
+  border-radius: 4%;
+  background-color: rgb(235, 219, 189);
+  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(0, 0, 0, 0.35);
+}
+.card-animal-savane .pictures {
+  height: 110px;
+  width: 155px;
+  border-radius: 4% 4% 0 0;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.card-animal-savane p {
+  margin: 0;
+  text-align: center;
+  color: whitesmoke;
+}
+.card-animal-savane .name {
+  font-size: 12px;
+  font-weight: bolder;
+}
+.card-animal-savane .espèce,
+.card-animal-savane .race {
+  font-size: 10px;
+}
+
+.card-animal-marais {
+  width: 155px;
+  border-radius: 4%;
+  background-color: rgb(191, 225, 223);
+  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(0, 0, 0, 0.35);
+}
+.card-animal-marais .pictures {
+  height: 110px;
+  width: 155px;
+  border-radius: 4% 4% 0 0;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.card-animal-marais p {
+  margin: 0;
+  text-align: center;
+  color: whitesmoke;
+}
+.card-animal-marais .name {
+  font-size: 12px;
+  font-weight: bolder;
+}
+.card-animal-marais .espèce,
+.card-animal-marais .race {
+  font-size: 10px;
+}
+
+.zoo_script_jungle,
+.zoo_script_savane,
+.zoo_script_marais {
+  width: 50%;
+  text-align: left;
+  padding: 10%;
+}
+.zoo_script_jungle p,
+.zoo_script_savane p,
+.zoo_script_marais p {
+  border-radius: 4%;
+  opacity: 0.7;
+  padding: 10%;
+}
+.zoo_script_jungle span,
+.zoo_script_savane span,
+.zoo_script_marais span {
+  font-weight: bolder;
+}
+
+.zoo_script_jungle p {
+  background-color: rgb(125, 151, 121);
+  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(0, 0, 0, 0.35);
+}
+
+.zoo_script_savane p {
+  background-color: rgb(235, 219, 189);
+  box-shadow: 0 3px 15px 0 rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(0, 0, 0, 0.35);
+}
+
+.zoo_script_marais p {
+  background-color: rgb(191, 225, 223);
+  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(0, 0, 0, 0.35);
+}
+
+.box-card .animals_zoo:hover .card-animal-jungle {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.box-card .animals_zoo:hover .card-animal-savane {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.box-card .animals_zoo:hover .card-animal-marais {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Styles pour les boutons audio */
+.audio-btn {
+  border: none;
+  background: none;
+  cursor: pointer;
+  position: absolute;
+  bottom: 15%;
+  right: 10%;
+  font-size: 24px;
+  color: whitesmoke;
+}
+
+.audio-btn i {
+  pointer-events: none;
+}
+
+/* Styles pour le modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+  padding-top: 60px;
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 5% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 600px;
+  border-radius: 10px;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}/*# sourceMappingURL=jungle.css.map */

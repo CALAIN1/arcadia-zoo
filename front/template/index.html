@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>ARCADIA ZOO</title>
+    <link rel="stylesheet" href="/fontawesome/css/all.min.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <!-- Font Awesome -->
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Bootstrap JS, Popper.js, and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script src="https://kit.fontawesome.com/010ecb02b3.js" crossorigin="anonymous"></script>
+    <script src="/index.js"></script>
+    <link rel="stylesheet" href="/index.css">
+    {{HEAD_CONTENT}}
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="headband">
+            <div class="headband_black">
+                <div id="pass">
+                    <a href="/home" class="back-to-home"><img class="logo" src="/imageszoo/logo-png.png"
+                            alt="logo-png"></a>
+                </div>
+                <button class="navbar-toggler" type="button">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <nav>
+                    <ul>
+                        <li><a href="/about">À PROPOS</a></li>
+                        <li><a href="/services">NOS SERVICES</a></li>
+                        <li><a href="/habitats">HABITATS</a></li>
+                        <li><a href="/contact">CONTACT</a></li>
+                        <li><a href="/connexion">CONNEXION</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="headband_grey"></div>
+        </div>
+    </header>
+    <main>
+        <div class="page-wrapper">
+            <div class="content">
+                <!-- Section pour ajouter du contenu -->
+                {{PAGE_CONTENT}}
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="footer_site">
+            <div class="mentions">
+                <p>© 2024 - Mon Site Web. Tous droits réservés.</p>
+            </div>
+            <div class="social">
+                <i class="fa-brands fa-square-instagram"></i>
+                <i class="fa-brands fa-square-facebook"></i>
+                <i class="fa-solid fa-recycle"></i>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

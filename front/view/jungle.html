@@ -1,0 +1,139 @@
+<link rel="stylesheet" href="/jungle.css">
+<script src="/index.js"></script>
+<div id="jungle">
+    <audio id="jungleAudio" autoplay loop>
+        <source src="/imageszoo/jungle/sounds.mp3" type="audio/mpeg">
+    </audio>
+    <img src="/imageszoo/jungle/jungle.webp" alt="jungle" class="habitats">
+    <div class="title">
+        <h2>JUNGLE</h2>
+    </div>
+    <div id="container_card">
+        <div class="box-card">
+            <div class="animals_zoo">
+                <div class="card-animal-jungle" data-name="GASTON" data-food="Viande" data-quantity="5kg"
+                    data-date="2024-05-21" data-health="Bon" data-image="/imageszoo/jungle/guepard.webp">
+                    <img src="/imageszoo/jungle/guepard.webp" alt="guepard" class="pictures">
+                    <p class="name">GASTON</p>
+                    <p class="espèce">Mammifères</p>
+                    <p class="race">GUÉPARD</p>
+                </div>
+                <div class="card-animal-jungle" data-name="TINO" data-food="" data-quantity="" data-date=""
+                    data-health="bon" data-image="/imageszoo/jungle/tigre.webp">
+                    <img src="imageszoo/jungle/tigre.webp" alt="tigre" class="pictures">
+                    <p class="name">TINO</p>
+                    <p class="espèce">Mammifères</p>
+                    <p class="race">TIGRE</p>
+                </div>
+            </div>
+            <div class="animals_zoo">
+                <div class="card-animal-jungle" data-name="TOMI" data-food="" data-quantity="" data-date=""
+                    data-health="bon" data-image="/imageszoo/jungle/tamarin.webp">
+                    <img src="imageszoo/jungle/tamarin.webp" alt="tamarin" class="pictures">
+                    <p class="name">TOMI</p>
+                    <p class="espèce">Mammifères</p>
+                    <p class="race">TAMARIN Empereur</p>
+                </div>
+                <div class="card-animal-jungle" data-name="OREO" data-food="" data-quantity="" data-date=""
+                    data-health="bon" data-image="/imageszoo/jungle/ouran.webp">
+                    <img src="imageszoo/jungle/ouran.webp" alt="ouran-outan" class="pictures">
+                    <p class="name">OREO</p>
+                    <p class="espèce">Mammifères</p>
+                    <p class="race">ORANG-OUTAN</p>
+                </div>
+            </div>
+            <div class="animals_zoo">
+                <div class="card-animal-jungle" data-name="BONE" data-food="" data-quantity="" data-date=""
+                    data-health="bon" data-image="/imageszoo/jungle/tapir.webp">
+                    <img src="imageszoo/jungle/tapir.webp" alt="tapir" class="pictures">
+                    <p class="name">BONÉ</p>
+                    <p class="espèce">Mammifères</p>
+                    <p class="race">TAPIR du Brésil</p>
+                </div>
+                <div class="card-animal-jungle" data-name="GISEL" data-food="" data-quantity="" data-date=""
+                    data-health="bon" data-image="/imageszoo/jungle/okapi.webp">
+                    <img src="imageszoo/jungle/okapi.webp" alt="okapi" class="pictures">
+                    <p class="name">GISEL</p>
+                    <p class="espèce">Mammifères</p>
+                    <p class="race">OKAPI</p>
+                </div>
+            </div>
+        </div>
+        <div class="zoo_script_jungle">
+            <p><span>La Jungle</span> est une forêt<br>
+                tropicale humide, au climat<br>
+                chaud et stable propice à une<br>
+                explosion de biodiversité.<br>
+                Environ deux tiers des espèces<br>
+                végétales et animales de notre<br>
+                planète vivent justement dans<br>
+                ce type d'environnement!
+            </p>
+            <button id="toggleAudio" class="audio-btn">
+                <i class="fa-solid fa-pause"></i>
+            </button>
+        </div>
+    </div>
+</div>
+<div id="animalModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2 id="animalName"></h2>
+        <div class="modal-body">
+            <p><strong>Nourriture:</strong> <span id="animalFood"></span></p>
+            <p><strong>Quantité de nourriture:</strong> <span id="animalQuantity"></span></p>
+            <p><strong>Date:</strong> <span id="animalDate"></span></p>
+            <p><strong>État de santé:</strong> <span id="animalHealth"></span></p>
+        </div>
+    </div>
+</div>
+
+<script>
+    function toggleAudio() {
+        var audio = document.getElementById('jungleAudio');
+        var button = document.getElementById('toggleAudio');
+        var icon = button.querySelector('i');
+        if (audio.paused) {
+            audio.play();
+            icon.classList.remove('fa-play');
+            icon.classList.add('fa-pause');
+        } else {
+            audio.pause();
+            icon.classList.remove('fa-pause');
+            icon.classList.add('fa-play');
+        }
+    }
+
+    document.getElementById('toggleAudio').addEventListener('click', toggleAudio);
+
+    // Modal script
+    var modal = document.getElementById("animalModal");
+    var span = document.getElementsByClassName("close")[0];
+
+    document.querySelectorAll('.card-animal-jungle').forEach(function (card) {
+        card.addEventListener('click', function () {
+            document.getElementById('animalName').textContent = card.dataset.name;
+            document.getElementById('animalFood').textContent = card.dataset.food;
+            document.getElementById('animalQuantity').textContent = card.dataset.quantity;
+            document.getElementById('animalDate').textContent = card.dataset.date;
+            document.getElementById('animalHealth').textContent = card.dataset.health;
+            modal.style.display = "block";
+            document.querySelector('.modal-content').style.backgroundImage = 'url(' + card.dataset.image + ')';
+            document.querySelector('.modal-content').style.backgroundSize = 'cover';
+            document.querySelector('.modal-content').style.backgroundPosition = 'center';
+            document.querySelector('.modal-content').style.color = 'white'; // Ensures the text is readable
+            document.querySelector('.modal-content').style.textShadow = '2px 2px 4px #000000'; // Adds shadow for better readability
+
+        });
+    });
+
+    span.onclick = function () {
+        modal.style.display = "none";
+    }
+
+    window.onclick = function (event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+</script>

@@ -1,0 +1,33 @@
+<link rel="stylesheet" href="/admin.css">
+<script src="/véto/etat.js"></script>
+<div class="sidebar">
+    <h1>Vétérinaire</h1>
+    <h2 id="username"></h2>
+    <ul>
+        <li><a href="/véto/rapport">Comptes rendus Animaux</a> </li>
+    </ul>
+</div>
+<div class="page-content">
+    <h3>Etat de l'Habitat</h3>
+    <button id="btn-create-etat">+ Nouveau commentaire</button>
+    <div id="data-list"></div>
+</div>
+
+<div id="create-etat-modal" class="modal">
+    <div class="modal-content">
+        <h4>Maintenance Habitat</h4>
+        <div>
+            <label>Habitat :</label>
+            <select id="new-etat-habitat"></select>
+        </div>
+        <div>
+            <label>Avis :</label>
+            <textarea id="new-etat-avis"></textarea>
+        </div>
+        <div style="justify-content: flex-start">
+            <input id="new-etat-amelioration" type="checkbox">
+            <label>Amélioration</label>
+        </div>
+        <button id="btn-valid-new-etat">soumettre</button>
+    </div>
+</div>
