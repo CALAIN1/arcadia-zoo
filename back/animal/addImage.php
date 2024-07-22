@@ -31,7 +31,7 @@ if ($animalCheckStmt->rowCount() == 0) {
 
 $filename = '';
 for ($i = 0; $i < 50; $i++) {
-    $filename .= ord(random_int(97, 122));
+    $filename .= chr(random_int(97, 122));
 }
 $filename .= str_replace('image/', '.', $_FILES['file']['type']);
 $destinationPath = __DIR__ . '/../../front/files/animals/' . $filename;
