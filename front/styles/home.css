@@ -3,18 +3,22 @@
   background-color: black;
   padding-top: 10px;
 }
+
 .container_banner .banner_headings {
   width: 50%;
   margin-left: auto;
   margin-right: 15px;
 }
+
 .container_banner .banner_figure {
   display: block;
   margin: auto;
 }
+
 .container_banner .banner_title {
   color: rgb(250, 235, 215);
 }
+
 .container_banner .banner_richtext {
   color: rgb(235, 219, 189);
 }
@@ -41,14 +45,17 @@
   padding-top: 40px;
   padding-bottom: 50px;
 }
+
 .container_home_services .fa-solid {
   font-size: 20px;
   cursor: none;
   padding: 7px 10px 0 50px;
 }
+
 .container_home_services .list {
   width: 100%;
 }
+
 .container_home_services .box {
   display: flex;
   cursor: pointer;
@@ -61,47 +68,55 @@
   width: 60%;
   transition: background-color 0.75s ease-out;
 }
+
 .container_home_services .box .hidden-text {
   display: none;
 }
+
 .container_home_services .box p {
   padding-top: 7px;
   margin: 0;
   pointer-events: none;
 }
+
 .container_home_services .box:hover,
 .container_home_services .box[active] {
   background-color: rgb(235, 219, 189);
   transition: background-color 0.25s ease-out;
 }
+
 .container_home_services .home_services_quote {
   padding-left: 20px;
   display: flex;
   flex-direction: column;
   flex: 1;
 }
+
 .container_home_services .home_services_img {
   width: 50%;
   display: flex;
   flex-direction: column;
   margin-left: 80px;
 }
+
 .container_home_services .home_services_img .train {
   height: 120px;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   border: 2px solid rgb(50, 46, 46);
   border-radius: 3%;
 }
+
 .container_home_services .home_services_img .d-flex {
   padding-top: 20px;
   gap: 65px;
 }
+
 .container_home_services .home_services_img .align-self-start,
 .container_home_services .home_services_img .align-self-center,
 .container_home_services .home_services_img .align-self-end {
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   border: 2px solid rgb(50, 46, 46);
   border-radius: 3%;
 }
@@ -111,6 +126,7 @@
   background-color: rgb(125, 151, 121);
   border: 1px solid rgb(250, 235, 215);
 }
+
 .review-form input,
 .review-form textarea {
   padding: 5px;
@@ -118,18 +134,20 @@
   background-color: rgb(235, 219, 189);
   width: 400px;
 }
+
 .review-form button {
   background-color: rgb(235, 219, 189);
-  color: white;
+  color: rgb(130, 86, 35);
   border: none;
   cursor: pointer;
 }
+
 .review-form button:hover {
   background-color: rgb(191, 225, 223);
 }
 
 .title_btn button {
-  color: whitesmoke;
+  color: rgb(85, 17, 17);
   background-color: rgb(235, 219, 189);
   border-radius: 5%;
   border: 3px solid rgb(250, 235, 215);
@@ -145,25 +163,32 @@ span {
   display: flex;
   padding-bottom: 50px;
 }
+
 .container_home_info .home_info_time {
   width: 50%;
   padding-left: 20px;
 }
+
 .container_home_info .title_btn {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding-bottom: 20px;
 }
+
 .container_home_info .allreviews {
   display: flex;
   gap: 12px;
   font-size: 15px;
 }
+
 .container_home_info .review1,
 .container_home_info .review2 {
   margin-right: 25px;
 }
+
 .container_home_info .fa-star {
   color: yellow;
-}/*# sourceMappingURL=home.css.map */
+}
+
+/*# sourceMappingURL=home.css.map */

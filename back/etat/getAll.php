@@ -13,7 +13,7 @@ for ($i = 0; $i < $etat_size; $i++) {
     $dt = new DateTime($etat_habitats[$i]["date"]);
     $etat_habitats[$i]['date'] = $dt->format('d/m/Y H:i');
 
-    //Remplacer les : par un h
+
     //$etat_habitats[$i]['date'] = str_replace(':', 'h', $dt->format('d/m/Y H:i'));
 }
 
