@@ -1,38 +1,5 @@
 <?php
-$myVariable = 5;
 
-for ($i = 0; $i < 10; $i++) {
-}
-
-while ($myVariable < 20) {
-    $myVariable *= 2;
-}
-
-if ($myVariable > 20) {
-} else if ($myVariable == 20) {
-} else {
-}
-
-switch ($myVariable) {
-    case 20:
-        break;
-}
-
-function myFunction()
-{
-}
-
-//echo 'Bonjour';
-//var_dump($myVariable);
-
-//http://localhost/index.php?page=services
-
-/*
-
-Sur les pages index.html et home.html
-Modifier tes boutons du menu pour qu'ils redirigent vers les autres pages du site
-
-*/
 
 if (isset($_GET['page'])) {
     $url = str_replace('.html', '', $_GET['page']);
