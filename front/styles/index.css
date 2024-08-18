@@ -7,6 +7,7 @@ body {
   min-height: 100vh;
   width: 100vw;
   overflow-x: hidden;
+  font-size: 1.05em;
 }
 
 h1,
@@ -20,11 +21,6 @@ h6 {
 
 * {
   font-family: "Dosis";
-  font-size: 17px;
-}
-
-.headband {
-  background-color: grey;
 }
 
 .headband_black {
@@ -54,6 +50,10 @@ main {
   flex: 1;
 }
 
+header {
+  background-color: black;
+}
+
 nav {
   display: flex;
   align-items: flex-end;
@@ -79,14 +79,43 @@ a:hover {
   list-style-type: none;
 }
 
-/* Masquer la navigation et afficher l'icône hamburger pour les écrans plus petits */
-@media (max-width: 768px) {
+.mobile-only {
+  display: none;
+}
+
+@media screen and (max-width: 1000px) {
+  .mobile-only {
+    display: inherit;
+  }
+  body {
+    font-size: 1.5em;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .mobile-only {
+    display: inherit;
+  }
+  body {
+    font-size: 1.5em;
+  }
+}
+@media screen and (max-width: 1000px) {
   /* Masquer la navigation par défaut */
   nav ul {
     display: none;
+    flex-direction: column;
+    /* Menu déroulant */
+    background-color: black;
+    /* Fond du menu */
+    position: absolute;
+    top: 50px;
+    /* Ajuster selon votre besoin */
+    right: 0;
+    width: 100%;
   }
   /* Afficher l'icône hamburger */
   .navbar-toggler {
+    flex: 1;
     display: block;
     /* Afficher l'icône */
     background: none;
@@ -94,18 +123,24 @@ a:hover {
     border: none;
     /* Retirer la bordure */
     color: white;
-  }
-  .navbar-toggler-icon {
-    content: "☰";
-    /* Icône hamburger */
-    font-size: 24px;
-    /* Taille de l'icône */
+    cursor: pointer;
+    font-size: 1.8em;
+    /* Change cursor to pointer */
   }
   /* Aligner l'icône hamburger à droite */
   .headband_black {
-    justify-content: flex-end;
+    height: 2.5em;
+    width: calc(100vw - 20px);
+    padding-right: 10px;
+    justify-content: flex-start;
+    background-color: black;
   }
 }
+/* Afficher le menu déroulant lors du clic sur le bouton hamburger */
+.navbar-toggler.active + nav ul {
+  display: flex;
+}
+
 /**footer**/
 .content {
   flex: 1;
@@ -122,8 +157,8 @@ a:hover {
   -webkit-backdrop-filter: brightness(0.4) blur(10px);
           backdrop-filter: brightness(0.4) blur(10px);
 }
-
-.mentions {
+.footer_site .mentions {
+  height: 6.25rem;
   grid-column: 2;
   text-align: center;
 }
@@ -134,9 +169,4 @@ a:hover {
   justify-content: flex-end;
   gap: 10px;
   padding-right: 30px;
-}
-
-.fa-brands,
-.fa-solid {
-  font-size: 25px;
 }/*# sourceMappingURL=index.css.map */

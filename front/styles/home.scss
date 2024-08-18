@@ -107,7 +107,6 @@ $border-color: rgba(250, 235, 215, 1);
         margin-left: 80px;
 
         .train {
-            height: 120px;
             object-fit: cover;
             border: 2px solid rgb(50, 46, 46);
             border-radius: 3%;
@@ -115,26 +114,35 @@ $border-color: rgba(250, 235, 215, 1);
 
         .d-flex {
             padding-top: 20px;
-            gap: 65px;
+
+            img {
+                flex: 1;
+                width: 0%;
+            }
         }
 
-        .align-self-start,
-        .align-self-center,
-        .align-self-end {
+        img {
             object-fit: cover;
             border: 2px solid rgb(50, 46, 46);
             border-radius: 3%;
+            margin: 0 0.4em;
         }
     }
-
-
 }
 
 .review-form {
     padding: 10px;
     background-color: $primary-color;
     border: 1px solid $border-color;
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: opacity .35s ease-out, max-height .25s ease-out;
 
+    &[show] {
+        max-height: 25em;
+        opacity: 1;
+    }
 
     input,
     textarea {
@@ -163,7 +171,8 @@ $border-color: rgba(250, 235, 215, 1);
     border-radius: 5%;
     border: 3px solid $border-color;
     width: 68px;
-
+    color: $wood-color;
+    font-weight: bold;
 }
 
 .title_btn button {
@@ -193,16 +202,109 @@ span {
 
     .allreviews {
         display: flex;
-        gap: 12px;
-        font-size: 15px;
+
+        .review {
+            margin: 15px;
+        }
+
     }
 
-    .review1,
-    .review2 {
-        margin-right: 25px;
-    }
 
     .fa-star {
         color: yellow;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .container_home_info {
+        flex-direction: column;
+
+        .home_info_reviews {
+            .title_btn {
+                flex-direction: column;
+                justify-content: center;
+
+                h2 {
+                    margin-bottom: 0.80em;
+                }
+            }
+
+            .review-form {
+                width: fit-content;
+                margin: 0 auto;
+                border-radius: 15px;
+
+                form {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                }
+            }
+
+            .allreviews {
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+        }
+
+        .home_info_time {
+            padding-left: 0;
+            width: initial;
+            text-align: center;
+            margin-bottom: 2.80em;
+        }
+    }
+
+    .container_banner {
+        .banner_headings {
+            width: inherit;
+            font-size: 1.1em;
+        }
+    }
+
+    .container_home_services {
+        flex-direction: column;
+        align-items: center;
+
+
+        .home_services_img {
+            margin-left: 0;
+            width: 100%;
+
+            .train {
+                height: inherit;
+            }
+
+            .d-flex {
+                justify-content: center;
+                padding-top: 0.8em;
+            }
+        }
+
+        .home_services_quote {
+            align-items: center;
+            margin-bottom: 1.4em;
+
+            .list {
+                display: flex;
+                width: fit-content;
+
+                .box {
+                    width: fit-content;
+                    padding: 1.5em;
+                    height: initial;
+                    margin: 0 .5em;
+
+                    i {
+                        padding: 0;
+                    }
+
+                    p {
+                        display: none;
+                    }
+                }
+            }
+        }
     }
 }

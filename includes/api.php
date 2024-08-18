@@ -1,10 +1,5 @@
 <?php
 
-if ($_SERVER['REQUEST_METHOD'] != 'POST') {
-    http_response_code(400);
-    return;
-}
-
 //header('content-type: application/json');
 session_start();
 if (!isset($_SESSION["username"])) {

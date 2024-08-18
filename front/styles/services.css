@@ -124,7 +124,6 @@ h3 {
   justify-content: center;
   align-items: center;
   text-align: center;
-  font-size: 15px;
 }
 .container_park .park-map {
   display: flex;
@@ -144,4 +143,42 @@ h3 {
   height: 230px;
   border-radius: 2%;
   padding-right: 5px;
+}
+
+@media screen and (max-width: 1000px) {
+  .container_food {
+    flex-direction: column;
+  }
+  .container_food .food_script {
+    margin-bottom: 0.9em;
+  }
+  .container_park h2 {
+    text-align: center;
+    margin-top: 0.5em;
+    margin-bottom: 1em;
+  }
+  .container_park .safari-train {
+    flex-direction: column;
+  }
+  .container_park .safari-train img {
+    width: auto;
+    max-width: 95vw;
+    height: auto;
+    margin: auto;
+  }
+  .container_park .safari-train .train_script {
+    margin-top: 0.5em;
+  }
+  .container_park .safari-train .train_script h3 {
+    padding-bottom: 0;
+  }
+  .container_park .park-map {
+    flex-direction: column;
+  }
+  .container_park .park-map .map_script {
+    width: inherit;
+  }
+  .container_park .park-map img {
+    margin: auto;
+  }
 }/*# sourceMappingURL=services.css.map */

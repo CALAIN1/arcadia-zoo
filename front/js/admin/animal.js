@@ -95,6 +95,8 @@ function loadContent() {
     header_race.innerHTML = 'race';
     const header_habitat = document.createElement('div');
     header_habitat.innerHTML = 'habitat';
+    const header_view = document.createElement('div');
+    header_view.innerHTML = 'Stats';
     const header_actions = document.createElement('div');
     header_actions.innerHTML = 'actions';
 
@@ -104,6 +106,7 @@ function loadContent() {
     header.appendChild(header_espece);
     header.appendChild(header_race);
     header.appendChild(header_habitat);
+    header.appendChild(header_view);
     header.appendChild(header_actions);
 
     list.appendChild(header);
@@ -147,6 +150,14 @@ function loadContent() {
                 const habitat = document.createElement('div');
                 habitat.innerHTML = habitats.filter(x => x.id == animal.habitat)[0].name;
 
+                const view = document.createElement('div');
+                if (animal.view_data) {
+                    view.innerHTML = animal.view_data.vues + ' <i class="fa-solid fa-eye"></i>, ' + animal.view_data.likes + ' <i class="fa-solid fa-heart"></i>';
+                }
+                else {
+                    view.innerHTML = '0 <i class="fa-solid fa-eye"></i>, 0 <i class="fa-solid fa-heart"></i>';
+                }
+
                 const actions = document.createElement('div');
                 const btnUpdate = document.createElement('button');
                 btnUpdate.innerHTML = 'modifier';
@@ -163,6 +174,7 @@ function loadContent() {
                 container.appendChild(espece);
                 container.appendChild(race);
                 container.appendChild(habitat);
+                container.appendChild(view);
                 container.appendChild(actions);
 
 

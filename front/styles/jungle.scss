@@ -28,158 +28,153 @@ $border-color: rgba(250, 235, 215, 1);
 
 #container_card {
     display: flex;
+    justify-content: center;
+    align-items: center;
     position: relative;
-}
 
-.animals_zoo {
-    width: 50%;
-    display: flex;
-    justify-content: space-around;
-    padding-left: 100px;
-    padding-bottom: 30px;
-    gap: 20px;
-}
-
-.box-card {
-    width: 50%;
-    padding-left: 15%;
-}
-
-.card-animal-jungle {
-    width: 155px;
-    border-radius: 4%;
-    background-color: $primary-color;
-    box-shadow: 0 3px 15px rgb(0 0 0 / 40%);
-    border: 1px solid rgba(0, 0, 0, .35);
-
-    .pictures {
-        height: 110px;
-        width: 155px;
-        border-radius: 4% 4% 0 0;
-        object-fit: cover;
+    .info-hearts {
+        display: flex;
     }
 
-    p {
-        margin: 0;
-        text-align: center;
-        color: whitesmoke;
+    .info {
+        padding-left: 10px;
     }
 
-    .name {
-        font-size: 12px;
-        font-weight: bolder;
+    .hearts {
+        position: relative;
+        font-size: 25px;
+        padding: 5px 0 0 40px;
     }
 
-    .espèce,
-    .race {
-        font-size: 10px;
+    .whiteheart {
+        position: absolute;
     }
 
-}
-
-.card-animal-savane {
-    width: 155px;
-    border-radius: 4%;
-    background-color: $secondary-color;
-    box-shadow: 0 3px 15px rgb(0 0 0 / 40%);
-    border: 1px solid rgba(0, 0, 0, .35);
-
-    .pictures {
-        height: 110px;
-        width: 155px;
-        border-radius: 4% 4% 0 0;
-        object-fit: cover;
+    .colorheart {
+        color: aqua;
+        opacity: 0;
+        transition-property: all;
+        transition-duration: 2s;
     }
 
-    p {
-        margin: 0;
-        text-align: center;
-        color: whitesmoke;
+    .fa-heart::before {
+        color: beige;
     }
 
-    .name {
-        font-size: 12px;
-        font-weight: bolder;
+    .colorheart:hover {
+        opacity: 1;
+        color: transparent;
+        background-clip: text;
+        -webkit-background-clip: text;
     }
 
-    .espèce,
-    .race {
-        font-size: 10px;
+    .animals_zoo {
+        display: flex;
+        justify-content: space-around;
+
+        .card-animal-jungle,
+        .card-animal-marais,
+        .card-animal-savane {
+            width: 9.6875em;
+            border-radius: 4%;
+            margin: 10px;
+            background-color: $primary-color;
+            box-shadow: 0 3px 15px rgb(0 0 0 / 40%);
+            border: 1px solid rgba(0, 0, 0, .35);
+
+            .pictures {
+                height: 6.875em;
+                width: 9.6875em;
+                border-radius: 4% 4% 0 0;
+                object-fit: cover;
+            }
+
+            p {
+                margin: 0;
+                text-align: center;
+                color: whitesmoke;
+            }
+
+            .name {
+                font-size: 12px;
+                font-weight: bolder;
+            }
+
+            .espèce,
+            .race {
+                font-size: 10px;
+            }
+        }
+
+        .card-animal-savane {
+            background-color: $secondary-color;
+        }
+
+        .card-animal-marais {
+            background-color: $third-color;
+        }
     }
-
-}
-
-.card-animal-marais {
-    width: 155px;
-    border-radius: 4%;
-    background-color: $third-color;
-    box-shadow: 0 3px 15px rgb(0 0 0 / 40%);
-    border: 1px solid rgba(0, 0, 0, .35);
-
-    .pictures {
-        height: 110px;
-        width: 155px;
-        border-radius: 4% 4% 0 0;
-        object-fit: cover;
-    }
-
-    p {
-        margin: 0;
-        text-align: center;
-        color: whitesmoke;
-    }
-
-    .name {
-        font-size: 12px;
-        font-weight: bolder;
-    }
-
-    .espèce,
-    .race {
-        font-size: 10px;
-    }
-
 }
 
 .zoo_script_jungle,
 .zoo_script_savane,
 .zoo_script_marais {
-    width: 50%;
-    text-align: left;
-    padding: 10%;
-
-    p {
-        border-radius: 4%;
-        opacity: 0.7;
-        padding: 10%;
-    }
+    position: relative;
+    text-align: center;
+    margin: 10%;
+    min-width: 20%;
+    border-radius: 4%;
+    opacity: 0.7;
+    padding: 1em 3em;
+    box-shadow: 0 3px 15px 0 rgb(0 0 0 / 40%);
+    border: 1px solid rgba(0, 0, 0, .35);
 
     span {
         font-weight: bolder;
     }
+
+    .audio-btn {
+        position: absolute;
+        bottom: -.5em;
+        right: -.5em;
+        width: 2em;
+        height: 2em;
+
+        border: 1px solid rgba(255, 255, 255, .5);
+        outline: 0;
+        background: none;
+        cursor: pointer;
+        font-size: 24px;
+        color: whitesmoke;
+        border-radius: 150px;
+
+        i {
+            pointer-events: none;
+        }
+    }
 }
 
 .zoo_script_jungle {
-    p {
+    background-color: $primary-color;
+
+    .audio-btn {
         background-color: $primary-color;
-        box-shadow: 0 3px 15px rgb(0 0 0 / 40%);
-        border: 1px solid rgba(0, 0, 0, .35);
     }
 }
 
 .zoo_script_savane {
-    p {
+    background-color: $secondary-color;
+
+    .audio-btn {
         background-color: $secondary-color;
-        box-shadow: 0 3px 15px 0 rgb(0 0 0 / 40%);
-        border: 1px solid rgba(0, 0, 0, .35);
     }
 }
 
 .zoo_script_marais {
-    p {
-        background-color: $third-color;
-        box-shadow: 0 3px 15px rgb(0 0 0 / 40%);
-        border: 1px solid rgba(0, 0, 0, .35);
+    background-color: $third-color;
+
+    .audio-btn {
+        background-color: $secondary-color;
     }
 }
 
@@ -195,25 +190,13 @@ $border-color: rgba(250, 235, 215, 1);
     background-color: rgba(255, 255, 255, 0.2);
 }
 
-/* Styles pour les boutons audio */
-.audio-btn {
-    border: none;
-    background: none;
-    cursor: pointer;
-    position: absolute;
-    bottom: 15%;
-    right: 10%;
-    font-size: 24px;
-    color: whitesmoke;
-}
 
-.audio-btn i {
-    pointer-events: none;
-}
 
 /* Styles pour le modal */
 .modal {
     display: none;
+    justify-content: center;
+    align-items: center;
     position: fixed;
     z-index: 1;
     left: 0;
@@ -231,8 +214,8 @@ $border-color: rgba(250, 235, 215, 1);
     margin: 5% auto;
     padding: 20px;
     border: 1px solid #888;
-    width: 80%;
-    max-width: 600px;
+    width: 400px;
+    max-width: 95vw;
     border-radius: 10px;
 }
 
@@ -248,4 +231,34 @@ $border-color: rgba(250, 235, 215, 1);
     color: black;
     text-decoration: none;
     cursor: pointer;
+}
+
+@media screen and (max-width: 1000px) {
+    #container_card {
+        font-size: 1.3em;
+        flex-direction: column-reverse;
+
+        .box-card {
+            display: flex;
+
+            .animals_zoo {
+                flex-direction: column;
+
+                &>* {
+                    p {
+                        font-size: inherit !important;
+                    }
+                }
+            }
+        }
+    }
+
+    .modal {
+        font-size: 1.3em;
+
+        .modal-content {
+            height: 40vh;
+            width: 95vw;
+        }
+    }
 }
