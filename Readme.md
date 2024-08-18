@@ -5,6 +5,7 @@ Ce site est un site d'entreprise pour les employés et un site vitrine pour les 
 
 - Lien du site déployé: https://calain.alwaysdata.net
 
+
 ## Liste des technos et ressources utilisées:
 
 | Technologie | Version |
@@ -34,7 +35,7 @@ Afin d'installer ce projet localement sur votre poste, il faut:
 
 | Rôle | Identifiant | password | Accès
 |--- | :-: |  :-: |  :-: | 
-|Administrateur | julia@gmail.com | 12345 | admin/accounts
+|Administrateur | jose@gmail.com | 12345 | admin/accounts
 |               |                 |       | admin/zone
 |               |                 |       | admin/animal
 |Vétérinaire | jul@gmail.com | 12345 | véto/rapport

@@ -122,4 +122,22 @@ textarea {
 
 .transport-bt {
   padding: 10px;
+}
+
+@media screen and (max-width: 1000px) {
+  #all-container {
+    flex-direction: column;
+  }
+  #all-container .contact-container {
+    width: 90%;
+  }
+  #all-container .contact-container .contact-form {
+    margin-top: 50px;
+  }
+  #all-container .contact-container .contact-info {
+    margin-top: 50px;
+  }
+  #all-container .access-container .transport-section {
+    margin-top: 60px;
+  }
 }/*# sourceMappingURL=contact.css.map */

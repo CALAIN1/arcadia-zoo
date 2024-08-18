@@ -9,12 +9,16 @@ document.addEventListener('DOMContentLoaded', function () {
     if (openFormButton != null) {
         // Sélection du formulaire
         const reviewForm = document.getElementById('review-form');
-        reviewForm.style.display = 'none';
 
         // Ajout d'un écouteur d'événement au clic sur le bouton
         openFormButton.addEventListener('click', function () {
             // Affichage du formulaire
-            reviewForm.style.display = reviewForm.style.display == 'none' ? 'block' : 'none';
+            if (reviewForm.hasAttribute('show')) {
+                reviewForm.removeAttribute('show');
+            }
+            else {
+                reviewForm.setAttribute('show', '');
+            }
         });
     }
 
@@ -23,15 +27,15 @@ document.addEventListener('DOMContentLoaded', function () {
     const modal = document.getElementById("animalModal");
     if (modal != null) {
         var span = document.querySelector(".close");
-
-        document.querySelectorAll('.card-animal-jungle').forEach(function (card) {
+        document.querySelectorAll('.card-animal-jungle,.card-animal-marais,.card-animal-savane').forEach(function (card) {
+            console.log(card);
             card.addEventListener('click', function () {
                 document.getElementById('animalName').textContent = card.dataset.name;
                 document.getElementById('animalFood').textContent = card.dataset.food;
                 document.getElementById('animalQuantity').textContent = card.dataset.quantity;
                 document.getElementById('animalDate').textContent = card.dataset.date;
                 document.getElementById('animalHealth').textContent = card.dataset.health;
-                modal.style.display = "block";
+                modal.style.display = "flex";
 
                 const modalContent = document.querySelector('.modal-content');
                 modalContent.style.backgroundImage = 'url(' + card.dataset.image + ')';
@@ -118,3 +122,18 @@ function showPasswordStep() {
         alert('Veuillez entrer votre adresse e-mail.');
     }
 }
+
+//menu déroulant 
+document.addEventListener('DOMContentLoaded', function () {
+    const toggler = document.querySelector('.navbar-toggler');
+    const nav = document.querySelector('nav ul');
+
+    toggler.addEventListener('click', function () {
+        toggler.classList.toggle('active');
+        if (toggler.classList.contains('active')) {
+            nav.style.display = 'flex';
+        } else {
+            nav.style.display = 'none';
+        }
+    });
+});

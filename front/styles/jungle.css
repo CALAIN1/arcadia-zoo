@@ -22,143 +22,149 @@
 
 #container_card {
   display: flex;
+  justify-content: center;
+  align-items: center;
   position: relative;
 }
-
-.animals_zoo {
-  width: 50%;
+#container_card .info-hearts {
+  display: flex;
+}
+#container_card .info {
+  padding-left: 10px;
+}
+#container_card .hearts {
+  position: relative;
+  font-size: 25px;
+  padding: 5px 0 0 40px;
+}
+#container_card .whiteheart {
+  position: absolute;
+}
+#container_card .colorheart {
+  color: aqua;
+  opacity: 0;
+  transition-property: all;
+  transition-duration: 2s;
+}
+#container_card .fa-heart::before {
+  color: beige;
+}
+#container_card .colorheart:hover {
+  opacity: 1;
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+#container_card .animals_zoo {
   display: flex;
   justify-content: space-around;
-  padding-left: 100px;
-  padding-bottom: 30px;
-  gap: 20px;
 }
-
-.box-card {
-  width: 50%;
-  padding-left: 15%;
-}
-
-.card-animal-jungle {
-  width: 155px;
+#container_card .animals_zoo .card-animal-jungle,
+#container_card .animals_zoo .card-animal-marais,
+#container_card .animals_zoo .card-animal-savane {
+  width: 9.6875em;
   border-radius: 4%;
+  margin: 10px;
   background-color: rgb(125, 151, 121);
   box-shadow: 0 3px 15px rgba(0, 0, 0, 0.4);
   border: 1px solid rgba(0, 0, 0, 0.35);
 }
-.card-animal-jungle .pictures {
-  height: 110px;
-  width: 155px;
+#container_card .animals_zoo .card-animal-jungle .pictures,
+#container_card .animals_zoo .card-animal-marais .pictures,
+#container_card .animals_zoo .card-animal-savane .pictures {
+  height: 6.875em;
+  width: 9.6875em;
   border-radius: 4% 4% 0 0;
   -o-object-fit: cover;
      object-fit: cover;
 }
-.card-animal-jungle p {
+#container_card .animals_zoo .card-animal-jungle p,
+#container_card .animals_zoo .card-animal-marais p,
+#container_card .animals_zoo .card-animal-savane p {
   margin: 0;
   text-align: center;
   color: whitesmoke;
 }
-.card-animal-jungle .name {
+#container_card .animals_zoo .card-animal-jungle .name,
+#container_card .animals_zoo .card-animal-marais .name,
+#container_card .animals_zoo .card-animal-savane .name {
   font-size: 12px;
   font-weight: bolder;
 }
-.card-animal-jungle .espèce,
-.card-animal-jungle .race {
+#container_card .animals_zoo .card-animal-jungle .espèce,
+#container_card .animals_zoo .card-animal-jungle .race,
+#container_card .animals_zoo .card-animal-marais .espèce,
+#container_card .animals_zoo .card-animal-marais .race,
+#container_card .animals_zoo .card-animal-savane .espèce,
+#container_card .animals_zoo .card-animal-savane .race {
   font-size: 10px;
 }
-
-.card-animal-savane {
-  width: 155px;
-  border-radius: 4%;
+#container_card .animals_zoo .card-animal-savane {
   background-color: rgb(235, 219, 189);
-  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.4);
-  border: 1px solid rgba(0, 0, 0, 0.35);
 }
-.card-animal-savane .pictures {
-  height: 110px;
-  width: 155px;
-  border-radius: 4% 4% 0 0;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-.card-animal-savane p {
-  margin: 0;
-  text-align: center;
-  color: whitesmoke;
-}
-.card-animal-savane .name {
-  font-size: 12px;
-  font-weight: bolder;
-}
-.card-animal-savane .espèce,
-.card-animal-savane .race {
-  font-size: 10px;
-}
-
-.card-animal-marais {
-  width: 155px;
-  border-radius: 4%;
+#container_card .animals_zoo .card-animal-marais {
   background-color: rgb(191, 225, 223);
-  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.4);
-  border: 1px solid rgba(0, 0, 0, 0.35);
-}
-.card-animal-marais .pictures {
-  height: 110px;
-  width: 155px;
-  border-radius: 4% 4% 0 0;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-.card-animal-marais p {
-  margin: 0;
-  text-align: center;
-  color: whitesmoke;
-}
-.card-animal-marais .name {
-  font-size: 12px;
-  font-weight: bolder;
-}
-.card-animal-marais .espèce,
-.card-animal-marais .race {
-  font-size: 10px;
 }
 
 .zoo_script_jungle,
 .zoo_script_savane,
 .zoo_script_marais {
-  width: 50%;
-  text-align: left;
-  padding: 10%;
-}
-.zoo_script_jungle p,
-.zoo_script_savane p,
-.zoo_script_marais p {
+  position: relative;
+  text-align: center;
+  margin: 10%;
+  min-width: 20%;
   border-radius: 4%;
   opacity: 0.7;
-  padding: 10%;
+  padding: 1em 3em;
+  box-shadow: 0 3px 15px 0 rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(0, 0, 0, 0.35);
 }
 .zoo_script_jungle span,
 .zoo_script_savane span,
 .zoo_script_marais span {
   font-weight: bolder;
 }
+.zoo_script_jungle .audio-btn,
+.zoo_script_savane .audio-btn,
+.zoo_script_marais .audio-btn {
+  position: absolute;
+  bottom: -0.5em;
+  right: -0.5em;
+  width: 2em;
+  height: 2em;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  outline: 0;
+  background: none;
+  cursor: pointer;
+  font-size: 24px;
+  color: whitesmoke;
+  border-radius: 150px;
+}
+.zoo_script_jungle .audio-btn i,
+.zoo_script_savane .audio-btn i,
+.zoo_script_marais .audio-btn i {
+  pointer-events: none;
+}
 
-.zoo_script_jungle p {
+.zoo_script_jungle {
   background-color: rgb(125, 151, 121);
-  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.4);
-  border: 1px solid rgba(0, 0, 0, 0.35);
+}
+.zoo_script_jungle .audio-btn {
+  background-color: rgb(125, 151, 121);
 }
 
-.zoo_script_savane p {
+.zoo_script_savane {
   background-color: rgb(235, 219, 189);
-  box-shadow: 0 3px 15px 0 rgba(0, 0, 0, 0.4);
-  border: 1px solid rgba(0, 0, 0, 0.35);
+}
+.zoo_script_savane .audio-btn {
+  background-color: rgb(235, 219, 189);
 }
 
-.zoo_script_marais p {
+.zoo_script_marais {
   background-color: rgb(191, 225, 223);
-  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.4);
-  border: 1px solid rgba(0, 0, 0, 0.35);
+}
+.zoo_script_marais .audio-btn {
+  background-color: rgb(235, 219, 189);
 }
 
 .box-card .animals_zoo:hover .card-animal-jungle {
@@ -173,25 +179,11 @@
   background-color: rgba(255, 255, 255, 0.2);
 }
 
-/* Styles pour les boutons audio */
-.audio-btn {
-  border: none;
-  background: none;
-  cursor: pointer;
-  position: absolute;
-  bottom: 15%;
-  right: 10%;
-  font-size: 24px;
-  color: whitesmoke;
-}
-
-.audio-btn i {
-  pointer-events: none;
-}
-
 /* Styles pour le modal */
 .modal {
   display: none;
+  justify-content: center;
+  align-items: center;
   position: fixed;
   z-index: 1;
   left: 0;
@@ -209,8 +201,8 @@
   margin: 5% auto;
   padding: 20px;
   border: 1px solid #888;
-  width: 80%;
-  max-width: 600px;
+  width: 400px;
+  max-width: 95vw;
   border-radius: 10px;
 }
 
@@ -226,4 +218,27 @@
   color: black;
   text-decoration: none;
   cursor: pointer;
+}
+
+@media screen and (max-width: 1000px) {
+  #container_card {
+    font-size: 1.3em;
+    flex-direction: column-reverse;
+  }
+  #container_card .box-card {
+    display: flex;
+  }
+  #container_card .box-card .animals_zoo {
+    flex-direction: column;
+  }
+  #container_card .box-card .animals_zoo > * p {
+    font-size: inherit !important;
+  }
+  .modal {
+    font-size: 1.3em;
+  }
+  .modal .modal-content {
+    height: 40vh;
+    width: 95vw;
+  }
 }/*# sourceMappingURL=jungle.css.map */

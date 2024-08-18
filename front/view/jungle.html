@@ -14,9 +14,17 @@
                 <div class="card-animal-jungle" data-name="GASTON" data-food="Viande" data-quantity="5kg"
                     data-date="2024-05-21" data-health="Bon" data-image="/imageszoo/jungle/guepard.webp">
                     <img src="/imageszoo/jungle/guepard.webp" alt="guepard" class="pictures">
-                    <p class="name">GASTON</p>
-                    <p class="espèce">Mammifères</p>
-                    <p class="race">GUÉPARD</p>
+                    <div class="info-hearts">
+                        <div class="info">
+                            <p class="name">GASTON</p>
+                            <p class="espèce">Mammifères</p>
+                            <p class="race">GUÉPARD</p>
+                        </div>
+                        <div class="hearts">
+                            <i class="fa-regular whiteheart fa-heart"></i>
+                            <i class="fa-solid colorheart fa-heart"></i>
+                        </div>
+                    </div>
                 </div>
                 <div class="card-animal-jungle" data-name="TINO" data-food="" data-quantity="" data-date=""
                     data-health="bon" data-image="/imageszoo/jungle/tigre.webp">
@@ -136,4 +144,27 @@
             modal.style.display = "none";
         }
     }
+
+    //link
+    document.querySelectorAll('.hearts').forEach((element) => {
+        element.addEventListener('click', function () {
+            const animalId = this.getAttribute('data-animal-id');
+
+            // Envoi de la requête POST pour incrémenter les "likes"
+            fetch(`/path/to/your/php/file?animal=${animalId}&like=true`, {
+                method: 'POST'
+            })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        // Mise à jour de l'interface utilisateur avec le nouveau nombre de likes
+                        const likeCounter = this.querySelector('.like-counter');
+                        if (likeCounter) {
+                            likeCounter.textContent = parseInt(likeCounter.textContent) + 1;
+                        }
+                    }
+                })
+                .catch(error => console.error('Erreur:', error));
+        });
+    });
 </script>

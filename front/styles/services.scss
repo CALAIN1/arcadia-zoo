@@ -149,7 +149,6 @@ h3 {
         align-items: center;
         text-align: center;
 
-        font-size: 15px;
     }
 
     .park-map {
@@ -173,4 +172,59 @@ h3 {
         border-radius: 2%;
         padding-right: 5px;
     }
+}
+
+@media screen and (max-width: 1000px) {
+
+    .container_food {
+        flex-direction: column;
+
+        .food_script {
+            margin-bottom: 0.9em;
+        }
+    }
+
+
+    .container_park {
+
+        h2 {
+            text-align: center;
+            margin-top: 0.5em;
+            margin-bottom: 1em;
+        }
+
+        .safari-train {
+            flex-direction: column;
+
+            img {
+                width: auto;
+                max-width: 95vw;
+                height: auto;
+                margin: auto;
+            }
+
+            .train_script {
+                margin-top: 0.5em;
+
+                h3 {
+                    padding-bottom: 0;
+                }
+            }
+        }
+
+        .park-map {
+            flex-direction: column;
+
+            .map_script {
+                width: inherit;
+            }
+
+            img {
+                margin: auto;
+            }
+
+        }
+
+    }
+
 }

@@ -1,7 +1,7 @@
 <?php
-$dsn = 'mysql:host=localhost;dbname=arcadia_zoo';
-$username = 'root';
-$password = ''; // Remplacez par votre mot de passe MySQL
+$dsn = 'mysql:host=mysql-calain.alwaysdata.net;dbname=calain_zoo_arcadia';
+$username = 'calain';
+$password = 'Julia2009^^'; // Remplacez par votre mot de passe MySQL
 
 try {
     $conn = new PDO($dsn, $username, $password);

@@ -50,4 +50,12 @@ input[type=email] {
 
 .btn:hover {
   background-color: rgb(235, 219, 189);
+}
+
+@media screen and (max-width: 1000px) {
+  .login-container {
+    width: 500px;
+    margin: auto;
+    margin-top: 20%;
+  }
 }/*# sourceMappingURL=connexion.css.map */

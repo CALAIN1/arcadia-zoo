@@ -137,3 +137,27 @@ textarea {
 .transport-bt {
     padding: 10px;
 }
+
+@media screen and (max-width: 1000px) {
+    #all-container {
+        flex-direction: column;
+
+        .contact-container {
+            width: 90%;
+
+            .contact-form {
+                margin-top: 50px;
+            }
+
+            .contact-info {
+                margin-top: 50px;
+            }
+        }
+
+        .access-container {
+            .transport-section {
+                margin-top: 60px;
+            }
+        }
+    }
+}
