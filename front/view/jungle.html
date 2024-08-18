@@ -1,5 +1,4 @@
 <link rel="stylesheet" href="/jungle.css">
-<script src="/index.js"></script>
 <div id="jungle">
     <audio id="jungleAudio" autoplay loop>
         <source src="/imageszoo/jungle/sounds.mp3" type="audio/mpeg">
@@ -95,76 +94,3 @@
         </div>
     </div>
 </div>
-
-<script>
-    function toggleAudio() {
-        var audio = document.getElementById('jungleAudio');
-        var button = document.getElementById('toggleAudio');
-        var icon = button.querySelector('i');
-        if (audio.paused) {
-            audio.play();
-            icon.classList.remove('fa-play');
-            icon.classList.add('fa-pause');
-        } else {
-            audio.pause();
-            icon.classList.remove('fa-pause');
-            icon.classList.add('fa-play');
-        }
-    }
-
-    document.getElementById('toggleAudio').addEventListener('click', toggleAudio);
-
-    // Modal script
-    var modal = document.getElementById("animalModal");
-    var span = document.getElementsByClassName("close")[0];
-
-    document.querySelectorAll('.card-animal-jungle').forEach(function (card) {
-        card.addEventListener('click', function () {
-            document.getElementById('animalName').textContent = card.dataset.name;
-            document.getElementById('animalFood').textContent = card.dataset.food;
-            document.getElementById('animalQuantity').textContent = card.dataset.quantity;
-            document.getElementById('animalDate').textContent = card.dataset.date;
-            document.getElementById('animalHealth').textContent = card.dataset.health;
-            modal.style.display = "block";
-            document.querySelector('.modal-content').style.backgroundImage = 'url(' + card.dataset.image + ')';
-            document.querySelector('.modal-content').style.backgroundSize = 'cover';
-            document.querySelector('.modal-content').style.backgroundPosition = 'center';
-            document.querySelector('.modal-content').style.color = 'white'; // Ensures the text is readable
-            document.querySelector('.modal-content').style.textShadow = '2px 2px 4px #000000'; // Adds shadow for better readability
-
-        });
-    });
-
-    span.onclick = function () {
-        modal.style.display = "none";
-    }
-
-    window.onclick = function (event) {
-        if (event.target == modal) {
-            modal.style.display = "none";
-        }
-    }
-
-    //link
-    document.querySelectorAll('.hearts').forEach((element) => {
-        element.addEventListener('click', function () {
-            const animalId = this.getAttribute('data-animal-id');
-
-            // Envoi de la requête POST pour incrémenter les "likes"
-            fetch(`/path/to/your/php/file?animal=${animalId}&like=true`, {
-                method: 'POST'
-            })
-                .then(response => response.json())
-                .then(data => {
-                    if (data.success) {
-                        // Mise à jour de l'interface utilisateur avec le nouveau nombre de likes
-                        const likeCounter = this.querySelector('.like-counter');
-                        if (likeCounter) {
-                            likeCounter.textContent = parseInt(likeCounter.textContent) + 1;
-                        }
-                    }
-                })
-                .catch(error => console.error('Erreur:', error));
-        });
-    });
-</script>
