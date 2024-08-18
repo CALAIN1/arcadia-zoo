@@ -1,2 +1,5 @@
 vendor/
 front/files/animals/
+composer.lock
+
+front/css

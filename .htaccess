@@ -3,7 +3,7 @@ RewriteEngine on
 # Redirection des fichiers CSS vers le dossier front/styles/
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_URI} \.css$
-RewriteRule ^(.*)$ front/styles/$1 [L]
+RewriteRule ^(.*)$ front/css/$1 [L]
 
 # Redirection des fichiers JS vers le dossier front/js/
 RewriteCond %{REQUEST_FILENAME} !-f
