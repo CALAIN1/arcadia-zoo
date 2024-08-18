@@ -29,7 +29,10 @@ document.addEventListener('DOMContentLoaded', function () {
         var span = document.querySelector(".close");
         document.querySelectorAll('.card-animal-jungle,.card-animal-marais,.card-animal-savane').forEach(function (card) {
             console.log(card);
-            card.addEventListener('click', function () {
+            card.addEventListener('click', function (e) {
+                if (e.target.className.includes('fa-heart'))
+                    return;
+
                 document.getElementById('animalName').textContent = card.dataset.name;
                 document.getElementById('animalFood').textContent = card.dataset.food;
                 document.getElementById('animalQuantity').textContent = card.dataset.quantity;
@@ -61,10 +64,26 @@ document.addEventListener('DOMContentLoaded', function () {
     if (loginForm) {
         loginForm.addEventListener('submit', onConnect);
     }
+
+    document.querySelectorAll('.hearts').forEach((element) => {
+        element.addEventListener('click', function () {
+            // Envoi de la requête POST pour incrémenter les "likes"
+            fetch(`/animal/like.php?animal=5&like=true`)
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        // Mise à jour de l'interface utilisateur avec le nouveau nombre de likes
+                        const likeCounter = this.querySelector('.like-counter');
+                        if (likeCounter) {
+                            likeCounter.textContent = parseInt(likeCounter.textContent) + 1;
+                        }
+                    }
+                })
+                .catch(error => console.error('Erreur:', error));
+        });
+    });
 });
 
-
-let lastButton = null;
 
 function showText(button, textContent) {
     if (lastButton === button) {
