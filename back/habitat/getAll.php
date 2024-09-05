@@ -1,5 +1,5 @@
 <?php
-require '../../includes/api.php';
+require '../../includes/db.php';
 
 //Fetch liste des habitats
 

@@ -1,72 +1,19 @@
-<link rel="stylesheet" href="/jungle.css">
+<link rel="stylesheet" href="/habitat.css">
+<script src="/habitat.js"></script>
+
 <div id="jungle">
-    <audio id="jungleAudio" autoplay loop>
+    <audio id="audio" autoplay loop>
         <source src="/imageszoo/jungle/sounds.mp3" type="audio/mpeg">
     </audio>
     <img src="/imageszoo/jungle/jungle.webp" alt="jungle" class="habitats">
     <div class="title">
         <h2>JUNGLE</h2>
     </div>
-    <div id="container_card">
-        <div class="box-card">
-            <div class="animals_zoo">
-                <div class="card-animal-jungle" data-name="GASTON" data-food="Viande" data-quantity="5kg"
-                    data-date="2024-05-21" data-health="Bon" data-image="/imageszoo/jungle/guepard.webp">
-                    <img src="/imageszoo/jungle/guepard.webp" alt="guepard" class="pictures">
-                    <div class="info-hearts">
-                        <div class="info">
-                            <p class="name">GASTON</p>
-                            <p class="espèce">Mammifères</p>
-                            <p class="race">GUÉPARD</p>
-                        </div>
-                        <div class="hearts">
-                            <i class="fa-regular whiteheart fa-heart"></i>
-                            <i class="fa-solid colorheart fa-heart"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-animal-jungle" data-name="TINO" data-food="" data-quantity="" data-date=""
-                    data-health="bon" data-image="/imageszoo/jungle/tigre.webp">
-                    <img src="imageszoo/jungle/tigre.webp" alt="tigre" class="pictures">
-                    <p class="name">TINO</p>
-                    <p class="espèce">Mammifères</p>
-                    <p class="race">TIGRE</p>
-                </div>
-            </div>
-            <div class="animals_zoo">
-                <div class="card-animal-jungle" data-name="TOMI" data-food="" data-quantity="" data-date=""
-                    data-health="bon" data-image="/imageszoo/jungle/tamarin.webp">
-                    <img src="imageszoo/jungle/tamarin.webp" alt="tamarin" class="pictures">
-                    <p class="name">TOMI</p>
-                    <p class="espèce">Mammifères</p>
-                    <p class="race">TAMARIN Empereur</p>
-                </div>
-                <div class="card-animal-jungle" data-name="OREO" data-food="" data-quantity="" data-date=""
-                    data-health="bon" data-image="/imageszoo/jungle/ouran.webp">
-                    <img src="imageszoo/jungle/ouran.webp" alt="ouran-outan" class="pictures">
-                    <p class="name">OREO</p>
-                    <p class="espèce">Mammifères</p>
-                    <p class="race">ORANG-OUTAN</p>
-                </div>
-            </div>
-            <div class="animals_zoo">
-                <div class="card-animal-jungle" data-name="BONE" data-food="" data-quantity="" data-date=""
-                    data-health="bon" data-image="/imageszoo/jungle/tapir.webp">
-                    <img src="imageszoo/jungle/tapir.webp" alt="tapir" class="pictures">
-                    <p class="name">BONÉ</p>
-                    <p class="espèce">Mammifères</p>
-                    <p class="race">TAPIR du Brésil</p>
-                </div>
-                <div class="card-animal-jungle" data-name="GISEL" data-food="" data-quantity="" data-date=""
-                    data-health="bon" data-image="/imageszoo/jungle/okapi.webp">
-                    <img src="imageszoo/jungle/okapi.webp" alt="okapi" class="pictures">
-                    <p class="name">GISEL</p>
-                    <p class="espèce">Mammifères</p>
-                    <p class="race">OKAPI</p>
-                </div>
-            </div>
+    <div class="container_card">
+        <div class="box-card" id="animals-card" data-habitat="jungle">
+            <!-- Contenu dynamique des cartes d'animaux généré dans habitat.js -->
         </div>
-        <div class="zoo_script_jungle">
+        <div class="zoo_script zoo_script_jungle">
             <p><span>La Jungle</span> est une forêt<br>
                 tropicale humide, au climat<br>
                 chaud et stable propice à une<br>

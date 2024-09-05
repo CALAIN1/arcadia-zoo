@@ -1,3 +1,5 @@
+let lastButton = null;
+
 document.addEventListener('DOMContentLoaded', function () {
     let boxes = document.querySelectorAll(".box");
     for (let i = 0; i < boxes.length; i++) {
@@ -65,6 +67,35 @@ document.addEventListener('DOMContentLoaded', function () {
         loginForm.addEventListener('submit', onConnect);
     }
 
+    const reviewForm = document.getElementById('review-form');
+    if (reviewForm != null) {
+        reviewForm.addEventListener('submit', onSubmitReview);
+
+        let setNoteTimeout;
+        let selectedNote = 0;
+        const stars = reviewForm.querySelectorAll('.fa-star');
+        stars.forEach((star, index) => {
+            star.addEventListener('click', () => {
+                setStarsCount(stars, index + 1);
+                selectedNote = index + 1;
+
+                document.getElementById('note-input').value = selectedNote;
+            });
+            star.addEventListener('mouseenter', () => {
+                clearTimeout(setNoteTimeout);
+                setStarsCount(stars, index + 1);
+            });
+            star.addEventListener('mouseleave', () => {
+                setNoteTimeout = setTimeout(setStarsCount, 150, stars, selectedNote);
+            });
+        });
+    }
+
+    const allReviewsContainer = document.getElementById('allReviews');
+    if (allReviewsContainer) {
+        loadReviews(allReviewsContainer);
+    }
+
     document.querySelectorAll('.hearts').forEach((element) => {
         element.addEventListener('click', function () {
             // Envoi de la requête POST pour incrémenter les "likes"
@@ -84,6 +115,61 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
+function setStarsCount(stars, note) {
+    for (let i = 0; i < note && i < stars.length; i++) {
+        stars[i].style.color = null;
+    }
+
+    for (let i = note; i < stars.length; i++) {
+        stars[i].style.color = 'gray';
+    }
+}
+
+function loadReviews(container) {
+    fetch('/avis/getVisibleReviews.php')
+        .then((response) => response.json())
+        .then(result => {
+            result.data.forEach(reviewData => {
+                const review = document.createElement('div');
+                reviewData.commentaire = reviewData.commentaire.replace(/(\r\n|\r|\n)/g, '<br>');
+                review.className = 'review';
+                review.innerHTML += `<span>${reviewData.pseudo}</span><br/>`;
+                review.innerHTML += `${reviewData.commentaire}<br/>`;
+
+                const starsContainer = document.createElement('div');
+                starsContainer.className = 'stars';
+                review.appendChild(starsContainer);
+
+                const stars = [];
+                for (let i = 0; i < 5; i++) {
+                    const star = document.createElement('i');
+                    star.className = 'fa-star fa-solid';
+                    stars.push(star);
+
+                    starsContainer.appendChild(star);
+                }
+
+                setStarsCount(stars, reviewData.note);
+                container.appendChild(review);
+            });
+        });
+}
+function onSubmitReview(event) {
+    event.preventDefault();
+
+    const formData = new FormData();
+    formData.append('pseudo', document.getElementById('client_name').value);
+    formData.append('commentaire', document.getElementById('comment').value);
+    formData.append('note', document.getElementById('note-input').value);
+
+    fetch('/avis/create.php', {
+        method: 'POST',
+        body: formData
+    }).then((response) => response.json())
+        .then(result => {
+            console.log(result);
+        });
+}
 
 function showText(button, textContent) {
     if (lastButton === button) {

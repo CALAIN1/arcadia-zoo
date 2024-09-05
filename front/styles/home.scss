@@ -144,12 +144,24 @@ $border-color: rgba(250, 235, 215, 1);
         opacity: 1;
     }
 
+    label {
+        width: 25%;
+        vertical-align: top;
+    }
+
     input,
     textarea {
         padding: 5px;
         border: 1px solid $border-color;
         background-color: $secondary-color;
-        width: 400px;
+        width: calc(75% - 12px);
+        margin-bottom: .5em;
+        resize: none;
+    }
+
+    .fa-star {
+        cursor: pointer;
+        transition: color .25s ease-out;
     }
 
     button {
@@ -202,11 +214,14 @@ span {
 
     .allreviews {
         display: flex;
+        max-width: 600px;
+        overflow-y: auto;
 
         .review {
             margin: 15px;
+            min-width: 200px;
+            max-width: 200px;
         }
-
     }
 
 
