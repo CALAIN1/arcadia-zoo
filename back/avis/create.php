@@ -12,6 +12,7 @@ if (!isset($_POST['pseudo']) || !isset($_POST['commentaire'])) {
 
 $pseudo = $_POST['pseudo'];
 $commentaire = $_POST['commentaire'];
+$note = $_POST['note'];
 
 if (strlen($pseudo) <= 3) {
     echo json_encode([
@@ -30,10 +31,18 @@ if (sizeof($words) < 2) {
     return;
 }
 
+if ((is_numeric($note) && intval($note) > 0 && intval($note) < 6) == false) {
+    echo json_encode([
+        'success' => false,
+        'error' => 'La note doit être comprise entre 1 et 5'
+    ]);
+    return;
+}
+
 // Préparer et exécuter la requête pour insérer un nouvel avis
-$stmt = $conn->prepare('INSERT INTO avis (`date`, `isvisible`, `pseudo`, `commentaire`) VALUES (NOW(), 0, ?, ?)');
+$stmt = $conn->prepare('INSERT INTO avis (`date`, `isvisible`, `pseudo`, `commentaire`, `note`) VALUES (NOW(), 0, ?, ?, ?)');
 try {
-    $stmt->execute([$pseudo, $commentaire]);
+    $stmt->execute([$pseudo, $commentaire, $note]);
 
     // Vérifier si l'insertion a réussi
     if ($stmt->rowCount() > 0) {

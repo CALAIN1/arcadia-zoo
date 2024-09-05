@@ -26,13 +26,13 @@ $border-color: rgba(250, 235, 215, 1);
     }
 }
 
-#container_card {
+.container_card {
     display: flex;
     justify-content: center;
     align-items: center;
-    position: relative;
 
     .info-hearts {
+        position: relative;
         display: flex;
     }
 
@@ -40,28 +40,47 @@ $border-color: rgba(250, 235, 215, 1);
         padding-left: 10px;
     }
 
-    .hearts {
+    .heart {
         position: relative;
         font-size: 25px;
-        padding: 5px 0 0 40px;
+        flex: 1;
+        cursor: pointer;
+
+        i {
+            pointer-events: none;
+        }
     }
 
     .whiteheart {
         position: absolute;
+        top: calc(50% - 15px);
+        left: calc(50% - 15px);
+        width: 30px;
+        height: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     .colorheart {
-        color: aqua;
+        position: absolute;
+        top: calc(50% - 15px);
+        left: calc(50% - 15px);
+        width: 30px;
+        height: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         opacity: 0;
         transition-property: all;
-        transition-duration: 2s;
+        transition-duration: .5s;
     }
 
     .fa-heart::before {
         color: beige;
     }
 
-    .colorheart:hover {
+    .heart:hover .colorheart {
         opacity: 1;
         color: transparent;
         background-clip: text;
@@ -116,9 +135,7 @@ $border-color: rgba(250, 235, 215, 1);
     }
 }
 
-.zoo_script_jungle,
-.zoo_script_savane,
-.zoo_script_marais {
+.zoo_script {
     position: relative;
     text-align: center;
     margin: 10%;

@@ -36,16 +36,6 @@ function onCreateEtat() {
     formData.append('avis', document.getElementById('new-etat-avis').value);
     formData.append('amelioration', document.getElementById('new-etat-amelioration').checked ? "oui" : "non");
 
-    //Ternaire
-    // document.getElementById('new-etat-amelioration').checked ? "oui" : "non"
-    //Equivalent :
-    /*if (document.getElementById('new-etat-amelioration').checked){
-        return "oui";
-    }
-    else{
-        return "non"
-    }*/
-
     fetch('/etat/create.php', {
         method: "POST",
         body: formData

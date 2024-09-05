@@ -2,7 +2,7 @@
 <title>Zoo Arcadia</title>
 <div class="container_banner">
     <div class="banner_figure">
-        <img src="imageszoo/headking.jpg" alt="head king">
+        <img src="imageszoo/headking.webp" alt="head king">
     </div>
     <div class="banner_headings">
         <h1 class="banner_title" data-title="ARCADIA ZOO">ARCADIA ZOO</h1>
@@ -104,9 +104,9 @@
     <div class="home_services_img">
         <img class="train" src="imageszoo/train.webp" alt="Le petit train">
         <div class="d-flex">
-            <img src="/imageszoo/savane/elephant.jpg" alt="animal1">
-            <img src="/imageszoo/jungle/singe.jpg" alt="animal2">
-            <img src="/imageszoo/marais/flamand.jpg" alt="animal3">
+            <img src="/imageszoo/savane/elephant.webp" alt="animal1">
+            <img src="/imageszoo/jungle/singe.webp" alt="animal2">
+            <img src="/imageszoo/marais/flamand.webp" alt="animal3">
             <img class="mobile-only" src="imageszoo/savane/zebre.webp" alt="animal14">
         </div>
     </div>
@@ -133,52 +133,25 @@
         </div>
         <!-- Formulaire d'avis caché par défaut -->
         <div class="review-form" id="review-form">
-            <form action="/submit" method="post">
+            <form id="form_avis">
                 <label for="name">Nom:</label>
-                <input type="text" id="name" name="name" required><br>
+                <input type="text" id="client_name" name="name" required><br>
                 <label for="comment">Commentaire:</label>
                 <textarea id="comment" name="comment" rows="4" required></textarea><br>
+                <label for="note">Note :</label>
+                <input id="note-input" type="hidden" name="note">
+
+                <i class="fa-solid fa-star" style="color: gray;"></i>
+                <i class="fa-solid fa-star" style="color: gray;"></i>
+                <i class="fa-solid fa-star" style="color: gray;"></i>
+                <i class="fa-solid fa-star" style="color: gray;"></i>
+                <i class="fa-solid fa-star" style="color: gray;"></i>
+                <br />
                 <button type="submit">Soumettre</button>
             </form>
         </div>
 
-        <div class="allreviews">
-            <div class="review">
-                <span>Isabelle de Caen</span><br>
-                Super visite en famille<br>
-                petits et grands sont ravis!<br>
-                <div class="stars">
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                </div>
-            </div>
-            <div class="review">
-                <span>Roger de Paris</span><br>
-                Un parc animalier au Top!<br>
-                Nous reviendrons!<br>
-                <div class="stars">
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                </div>
-            </div>
-            <div class="review">
-                <span>Stéphane de Rouen</span><br>
-                Superbe journée, beaux animaux,<br>
-                services sympas.<br>
-                <div class="stars">
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star" style="color: gray;"></i>
-                </div>
-            </div>
+        <div class="allreviews" id="allReviews">
         </div>
     </div>
 </div>

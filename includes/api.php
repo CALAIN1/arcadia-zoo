@@ -2,6 +2,7 @@
 
 //header('content-type: application/json');
 session_start();
+
 if (!isset($_SESSION["username"])) {
     echo json_encode([
         "success" => false,
@@ -9,6 +10,7 @@ if (!isset($_SESSION["username"])) {
     ]);
     return;
 }
+
 require 'db.php';
 
 // Function to validate email using regex
@@ -22,10 +24,3 @@ $stmt = $conn->prepare($sql);
 $stmt->bindParam(':role', $_SESSION["user_role"]);
 $stmt->execute();
 $role = $stmt->fetch(PDO::FETCH_ASSOC);
-if ($role["label"] != "admin") {
-    echo json_encode([
-        "success" => false,
-        "error" => "Permission refusée. Vous devez être administrateur."
-    ]);
-    return;
-}
