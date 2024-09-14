@@ -6,14 +6,14 @@ require '../../includes/api.php';
 
 
 // Vérifier si l'avis a été fourni
-if (!isset($_POST['avis_id'])) {
+if (!isset($_POST['id'])) {
     echo json_encode([
         "success" => false,
-        "error" => "Le nom est requis"
+        "error" => "L'id est requis"
     ]);
     return;
 }
-if (!is_numeric($_POST['avis_id'])) {
+if (!is_numeric($_POST['id'])) {
     echo json_encode([
         'success' => false,
         'error' => "L'ID de l'avis doit être numérique"
@@ -24,7 +24,7 @@ if (!is_numeric($_POST['avis_id'])) {
 
 
 // Récupérer l'avis
-$avis_id = $_POST['avis_id'];
+$avis_id = $_POST['id'];
 
 // Supprimer l'avis de la base de données
 $sql = "DELETE FROM `avis` WHERE `id` = :avis_id";
