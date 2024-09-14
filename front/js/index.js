@@ -30,7 +30,6 @@ document.addEventListener('DOMContentLoaded', function () {
     if (modal != null) {
         var span = document.querySelector(".close");
         document.querySelectorAll('.card-animal-jungle,.card-animal-marais,.card-animal-savane').forEach(function (card) {
-            console.log(card);
             card.addEventListener('click', function (e) {
                 if (e.target.className.includes('fa-heart'))
                     return;
@@ -167,7 +166,15 @@ function onSubmitReview(event) {
         body: formData
     }).then((response) => response.json())
         .then(result => {
-            console.log(result);
+            if (result.success) {
+                alert('Votre avis a bien été soumis, il est en attente de validation');
+                const reviewForm = document.getElementById('review-form');
+                reviewForm.removeAttribute('show');
+            }
+            else {
+                alert(result.error);
+            }
+
         });
 }
 

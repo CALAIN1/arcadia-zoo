@@ -8,7 +8,7 @@
 }
 
 body {
-    background-image: url('/path/to/apropos.webp');
+    background-image: url('/imageszoo/apropos.webp');
     background-size: cover;
     background-position: bottom center;
     background-repeat: no-repeat;
@@ -67,11 +67,11 @@ main {
         padding-left: 70px;
     }
 
-    .train {
-        position: absolute;
-        bottom: 0px;
-        right: 0;
-        width: 35vw;
+}
 
-    }
+.train {
+    position: absolute;
+    bottom: 0px;
+    right: 0;
+    width: 35vw;
 }
