@@ -12,7 +12,7 @@ if ($animal == null) {
     return;
 }
 
-$sql = 'SELECT image.* FROM image_animal INNER JOIN image ON image.id = image_animal.image WHERE animal = ?';
+$sql = 'SELECT * FROM image_animal  WHERE animal = ?';
 $stmt = $conn->prepare($sql);
 $stmt->execute([$animal['id']]);
 

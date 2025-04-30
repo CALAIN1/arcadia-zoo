@@ -58,9 +58,9 @@ Télécharger et installer WAMP :
 |Administrateur | jose@gmail.com | 12345 | admin/accounts
 |               |                 |       | admin/zone
 |               |                 |       | admin/animal
-|Vétérinaire | jul@gmail.com | 12345 | véto/rapport
+|Vétérinaire | jul@gmail.com | 2210 | véto/rapport
 |               |                 |       | véto/etat
-|Employé | henri@gmail.com | 12345 | employé/avis
+|Employé | henri@gmail.com | 2210 | employé/avis
 |               |                 |       | employé/food
                                             
 

@@ -4,6 +4,7 @@ let editingData;
 let habitatList = [];
 let raceList = [];
 
+// Événements DOM
 document.addEventListener('DOMContentLoaded', async () => {
     const btnCreate = document.getElementById('btn-create-animal');
     btnCreate.addEventListener('click', onOpenCreateAnimal);
@@ -26,6 +27,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     loadContent();
 });
 
+// Fonction pour créer un animal
 function onCreateAnimal() {
     const formData = new FormData();
     formData.append('name', document.getElementById('new-animal-name').value);
@@ -42,6 +44,7 @@ function onCreateAnimal() {
         });
 }
 
+// Fonction pour charger les races
 function loadRaces() {
     return new Promise((resolve) => {
         fetch("/race/getAll.php", { method: "POST" })
@@ -59,6 +62,8 @@ function loadRaces() {
             });
     });
 }
+
+// Fonction pour charger les habitats
 function loadHabitats() {
     return new Promise((resolve) => {
         fetch("/habitat/getAll.php", { method: "POST" })
@@ -76,6 +81,7 @@ function loadHabitats() {
             });
     });
 }
+// Fonction pour charger la liste des animaux
 function loadContent() {
     const list = document.getElementById('data-list');
     list.innerHTML = '';
@@ -121,6 +127,7 @@ function loadContent() {
                 id.innerHTML = animal.id;
                 const photos = document.createElement('div');
                 photos.className = 'photos';
+
                 const btnAddPhoto = document.createElement('input');
                 const lblAddPhoto = document.createElement('label');
                 const inputId = generateRandomID();
@@ -137,6 +144,15 @@ function loadContent() {
                     const imgContainer = document.createElement('div');
                     imgContainer.className = "img-container";
                     imgContainer.innerHTML = `<img src="${img.url}"/>`;
+                    photos.appendChild(imgContainer);
+
+                    //* Ajout du bouton de suppression pour chaque image
+                    const btnDeleteImage = document.createElement('button');
+                    btnDeleteImage.innerHTML = 'x';
+                    btnDeleteImage.className = 'delete-image-btn';
+                    btnDeleteImage.addEventListener('click', () => deleteAnimalImage(img.id, imgContainer));
+
+                    imgContainer.appendChild(btnDeleteImage);
                     photos.appendChild(imgContainer);
                 });
 
@@ -218,6 +234,25 @@ function addAnimalImage(animalInfos, files) {
         }).then((response) => response.json())
             .then(resolve);
     });
+}
+//* Fonction pour supprimer une image d'un animal
+function deleteAnimalImage(imageId, imageElement) {
+    if (!confirm("Voulez-vous vraiment supprimer cette image ?")) return;
+
+    const formData = new FormData();
+    formData.append('image_id', imageId);
+
+    fetch('/animal/deleteImage.php', {
+        method: "POST",
+        body: formData
+    }).then(response => response.json())
+        .then(result => {
+            if (result.success) {
+                imageElement.remove();
+            } else {
+                alert("Erreur lors de la suppression de l'image.");
+            }
+        }).catch(error => console.error("Erreur :", error));
 }
 function modifyInfos(animalInfos) {
     modifyAnimalModal.setAttribute('show', '');

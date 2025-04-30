@@ -10,21 +10,21 @@ if (!isset($_FILES['file']) || sizeof($_FILES['file']) == 0) {
     return;
 }
 
-if (!isset($_POST['animal']) || !is_numeric($_POST['animal'])) {
+if (!isset($_POST['habitat']) || !is_numeric($_POST['habitat'])) {
     echo json_encode([
         'success' => false,
-        'error' => 'Vous devez fournir un ID d\'animal valide'
+        'error' => 'Vous devez fournir un ID d\'habitat valide'
     ]);
     return;
 }
 
-$animalCheckStmt = $conn->prepare('SELECT * FROM animal WHERE `id` = :animal');
-$animalCheckStmt->bindParam(':animal', $_POST['animal']);
-$animalCheckStmt->execute();
-if ($animalCheckStmt->rowCount() == 0) {
+$habitatCheckStmt = $conn->prepare('SELECT * FROM habitat WHERE `id` = :habitat');
+$habitatCheckStmt->bindParam(':habitat', $_POST['habitat']);
+$habitatCheckStmt->execute();
+if ($habitatCheckStmt->rowCount() == 0) {
     echo json_encode([
         'success' => false,
-        'error' => 'Cet animal n existe pas'
+        'error' => 'Cet habitat n existe pas'
     ]);
     return;
 }
@@ -35,21 +35,21 @@ for ($i = 0; $i < 50; $i++) {
 }
 //on conserve la même extension de fichier
 $filename .= str_replace('image/', '.', $_FILES['file']['type']);
-$destinationPath = __DIR__ . '/../../front/files/animals/' . $filename;
+$destinationPath = __DIR__ . '/../../front/files/habitats/' . $filename;
 
 if (move_uploaded_file($_FILES['file']['tmp_name'], $destinationPath)) {
-    $sql = "INSERT INTO image_animal (animal, url) VALUES (?,?)";
+    $sql = "INSERT INTO image_habitat (habitat, url) VALUES (?,?)";
 
     $stmt = $conn->prepare($sql);
-    if ($stmt->execute([$_POST['animal'], '/animals/' . $filename])) {
+    if ($stmt->execute([$_POST['habitat'], '/habitats/' . $filename])) {
         echo json_encode([
             'success' => true,
-            'data' => ['url' => '/animals/' . $filename]
+            'data' => ['url' => '/habitats/' . $filename]
         ]);
     } else {
         echo json_encode([
             'success' => false,
-            'error' => 'Erreur lors de l\'attribution de l\'image à l\'animal'
+            'error' => 'Erreur lors de l\'attribution de l\'image à l\'habitat'
         ]);
         unlink($destinationPath);
     }

@@ -34,30 +34,3 @@ if (file_exists('front/view/' . $url . '.html')) {
     echo $url . ' not found';
     http_response_code(404);
 }
-
-/*switch ($url) {
-    case '/':
-    case '/home':
-        $pageContent = file_get_contents('home.html');
-        break;
-
-    case '/index':
-        $pageContent = file_get_contents('index.html');
-        break;
-
-    case '/services':
-        $pageContent = file_get_contents('services.html');
-        break;
-
-    case '/habitats':
-        $pageContent = file_get_contents('habitats.html');
-        break;
-
-    default:
-        //http_response_code(404);
-        var_dump($url);
-        break;
-}
-
-$indexContent = str_replace('{{PAGE_CONTENT}}', $pageContent, $indexContent);
-echo $indexContent;*/

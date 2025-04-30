@@ -29,7 +29,7 @@ $stmt = $conn->prepare($sql);
 $stmt->execute([$habitat['id']]);
 $animals = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-$sql = "SELECT image.* FROM image_animal INNER JOIN image ON image.id = image_animal.image WHERE image_animal.animal = ?";
+$sql = "SELECT * FROM image_animal  WHERE image_animal.animal = ?";
 $animalCount = sizeof($animals);
 for ($i = 0; $i < $animalCount; $i++) {
     $stmt = $conn->prepare($sql);

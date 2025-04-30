@@ -10,7 +10,7 @@ if (!isset($_POST['habitat_id'])) {
     echo json_encode([
         "success" => false,
         "error" => "L'ID habitat est requis"
-    ]);
+    ]); 
     return;
 }
 if (!is_numeric($_POST['habitat_id'])) {
